@@ -2,7 +2,7 @@
 
 `git status` 와 `git diff` 결과를 입력으로 받아 **커밋 메시지** 와
 **Pull Request 초안** 을 한 번에 1회 AI API 호출로 만들어주는 터미널 도구입니다.
-Anthropic Claude API 를 기본 백엔드로 사용하며, 프롬프트·옵션·후처리까지
+OpenAI 호환 API 를 기본 백엔드로 사용하며, 프롬프트·옵션·후처리까지
 모두 코드에서 직접 제어해 결과 품질을 일정 수준 이상으로 끌어올립니다.
 
 ---
@@ -17,11 +17,11 @@ ai-assignment/
 │   ├── git_ops.py           # git status / diff / untracked 수집
 │   ├── safe_mode.py         # 민감정보 마스킹 + diff 분량 절단
 │   ├── prompts.py           # commit / pr 용 system + user 프롬프트 빌더
-│   ├── ai_client.py         # Anthropic API 호출 + 예외 변환
+│   ├── ai_client.py         # OpenAI 호환 API 호출 + 예외 변환
 │   ├── validators.py        # 길이/섹션/불릿 규칙 검증 및 자동 보정
 │   └── render.py            # 터미널 출력(헤더·구획선·INFO 로그)
 ├── Dockerfile               # 평가자 재현용 컨테이너 (git + python:3.12-slim)
-├── requirements.txt         # anthropic, python-dotenv
+├── requirements.txt         # openai, python-dotenv
 ├── evidence/                # 실행 결과 캡처 (재현 확인용)
 └── README.md                # 이 문서
 ```
@@ -34,7 +34,7 @@ ai-assignment/
 
 - Python 3.10 이상 (개발은 3.12.10 에서 진행)
 - Git CLI (PATH 등록 필수)
-- Anthropic API Key
+- OpenAI 호환 API Key
 
 ### 2. 설치
 
@@ -54,27 +54,30 @@ pip install -r requirements.txt
 
 ```powershell
 # Windows PowerShell
-$env:AI_API_KEY = "sk-ant-..."
+$env:AI_API_KEY = "YOUR_KEY"
+$env:AI_BASE_URL = "https://copa.codyssey.kr/v1"  # 생략 시 기본값 사용
 ```
 
 ```bash
 # macOS / Linux / Git Bash
-export AI_API_KEY="sk-ant-..."
+export AI_API_KEY="YOUR_KEY"
+export AI_BASE_URL="https://copa.codyssey.kr/v1"  # 생략 시 기본값 사용
 ```
 
 ```bash
 # .env 파일을 둬도 자동으로 로드됩니다 (python-dotenv 사용)
-echo 'AI_API_KEY=sk-ant-...' > .env
+echo 'AI_API_KEY=YOUR_KEY' > .env
 ```
 
-환경변수 이름은 `AI_API_KEY` 를 우선 검사하고, 없으면 Anthropic 표준인
-`ANTHROPIC_API_KEY` 도 받아들입니다. 둘 다 비어 있으면 다음과 같이 즉시 종료합니다.
+API 키는 `AI_API_KEY` 환경변수에서만 읽습니다. `AI_BASE_URL`은 선택 사항이며,
+설정하지 않으면 `https://copa.codyssey.kr/v1`을 사용합니다. 키가 비어 있으면
+다음과 같이 즉시 종료합니다.
 
 ```
 [INFO] Git 변경 사항 수집 중...
 [INFO] 변경 파일 7개 / diff 118줄 감지
 [INFO] AI API 요청 중...
-[ERROR] AI_API_KEY (또는 ANTHROPIC_API_KEY) 환경변수가 설정되지 않았습니다.
+[ERROR] AI_API_KEY 환경변수가 설정되지 않았습니다.
   예) Windows PowerShell: $env:AI_API_KEY = "YOUR_KEY"
        Bash:               export AI_API_KEY="YOUR_KEY"
 ```
@@ -100,7 +103,7 @@ python main.py pr --base develop
 
 | 옵션 | 기본값 | 설명 |
 |---|---|---|
-| `--model` | `claude-haiku-4-5-20251001` | 호출 모델. 품질을 더 원하면 `claude-sonnet-4-6` 등으로 교체. |
+| `--model` | `gpt-5.4` | 호출 모델. OpenAI 호환 서버가 제공하는 모델 식별자를 지정할 수 있음. |
 | `--temperature` | `0.3` | 샘플링 온도. 결정적 결과는 낮게, 다양한 표현은 높게. |
 | `--max-tokens` | `1024` | 응답 길이 한도. 너무 작으면 본문이 잘리거나 비어 옵니다. |
 | `--safe-mode` | off | 민감정보 마스킹 + diff 분량 제한을 켜고 프롬프트로 전송. |
@@ -129,7 +132,7 @@ $ python main.py commit
 [INFO] AI API 요청 중...
 [DONE] 커밋 메시지 생성 완료
 [INFO] AI API 호출 횟수: 1회
-[INFO] 모델=claude-haiku-4-5-20251001 latency=842ms tokens(in/out)=2103/187
+[INFO] 모델=gpt-5.4 latency=842ms tokens(in/out)=2103/187
 
 ============================================================
                        Commit Message
@@ -152,7 +155,7 @@ $ python main.py pr --base main
 [INFO] AI API 요청 중...
 [DONE] PR 초안 생성 완료
 [INFO] AI API 호출 횟수: 1회
-[INFO] 모델=claude-haiku-4-5-20251001 latency=1310ms tokens(in/out)=3812/420
+[INFO] 모델=gpt-5.4 latency=1310ms tokens(in/out)=3812/420
 
 ============================================================
                           PR Title
@@ -169,7 +172,7 @@ feat: 커밋/PR 자동 생성 CLI(ai-gitgen) 추가
 ## What
 - aigitgen 패키지 신설: git_ops / prompts / ai_client / validators / safe_mode / render 모듈로 책임 분리
 - main.py 에서 argparse 기반 commit / pr 서브커맨드 노출, --model/--temperature/--max-tokens/--safe-mode 등 옵션 제공
-- Anthropic API 호출 결과를 검증·자동 보정하여 커밋 72자 / PR 80자 / Why·What·How to Test 섹션 규칙을 강제
+- OpenAI 호환 API 호출 결과를 검증·자동 보정하여 커밋 72자 / PR 80자 / Why·What·How to Test 섹션 규칙을 강제
 
 ## How to Test
 - `pip install -r requirements.txt` 후 `$env:AI_API_KEY = "..."` 로 키 설정
@@ -213,8 +216,8 @@ $ python main.py commit --dry-run
 
 ```
    ┌─────────────┐    ┌──────────────┐    ┌────────────┐    ┌─────────────┐
-   │ git status  │ →  │ safe-mode    │ →  │ prompts.py │ →  │ Anthropic   │
-   │ git diff    │    │ (옵션)       │    │ system+user│    │ Messages API│
+   │ git status  │ →  │ safe-mode    │ →  │ prompts.py │ →  │ OpenAI 호환 │
+   │ git diff    │    │ (옵션)       │    │ system+user│    │ Chat API    │
    │ untracked   │    │ mask/truncate│    │            │    │ (1회 호출)  │
    └─────────────┘    └──────────────┘    └────────────┘    └──────┬──────┘
                                                                     │
@@ -236,7 +239,7 @@ $ python main.py commit --dry-run
 3. **프롬프트 조립**: `prompts.build_commit_prompt()` /
    `build_pr_prompt()` 가 출력 형식 규칙을 system 메시지에, 변경 컨텍스트를
    user 메시지에 분리해 담습니다.
-4. **AI 호출**: `ai_client.call_anthropic()` 가 Anthropic Messages API 를
+4. **AI 호출**: `ai_client.call_openai()` 가 OpenAI 호환 Chat Completions API 를
    **1회** 호출합니다. 인증 실패·네트워크 오류·속도 제한·기타 API 오류는
    각각 한국어 메시지로 변환됩니다.
 5. **검증/보정**: `validators.parse_commit()` / `parse_pr()` 가 길이 한도와
@@ -275,9 +278,8 @@ $ python main.py commit --dry-run
   commit 메시지 + 4불릿 PR 본문까지 여유 있게 들어갑니다. 변경이 매우 클
   때 본문이 잘려 PR 섹션이 누락되면 validators 가 자리표시자를 넣고
   경고하지만, 근본 해결은 `--max-tokens 2048` 정도로 늘리는 것입니다.
-- `model` 은 비용/품질 트레이드오프 축입니다. 기본 Haiku 는 짧은 변경엔
-  충분합니다. 변경 규모가 크거나 자연어 품질이 더 중요하면 Sonnet 으로
-  교체하세요(`--model claude-sonnet-4-6`).
+- `model` 은 비용/품질 트레이드오프 축입니다. 기본 `gpt-5.4` 외에도
+  프록시가 제공하는 모델을 `--model` 옵션으로 지정할 수 있습니다.
 
 ---
 
@@ -310,7 +312,7 @@ LLM 으로 흘려보낼 수 있다는 점을 기본 가정으로 둡니다. `--s
 
 | 패턴 | 예시 입력 | 마스킹 결과 |
 |---|---|---|
-| Provider 키(sk-/sk-ant-/ghp_/AKIA/xox*) | `sk-ant-api03-AbCdEf...gh` | `sk-***gh` |
+| Provider 키(sk-/sk-ant-/ghp_/AKIA/xox*) | `sk-example-AbCdEf...gh` | `sk-***gh` |
 | `Authorization: Bearer ...` | `Bearer eyJabc...sig` | `Bearer ***MASKED***` |
 | 키=값 형 비밀 (api_key, secret, password 등) | `password = "super_secret"` | `password=***MASKED***` |
 | JWT (3-세그먼트 base64url) | `eyJabc.eyJ.sig` | `eyJ***ig` |
@@ -340,13 +342,13 @@ LLM 으로 흘려보낼 수 있다는 점을 기본 가정으로 둡니다. `--s
 
 ```
 # 적용 전 (원본 diff 일부)
-+ANTHROPIC_API_KEY = "sk-ant-api03-AbCdEf1234567890_qwertyuiopasdfgh"
++AI_API_KEY = "sk-example-AbCdEf1234567890_qwertyuiopasdfgh"
 +ADMIN_EMAIL = "hee.jun.kim+admin@example.com"
 +password = "super_secret_db_pwd_2026"
 +Authorization: Bearer eyJabc.eyJpc3MiOiJtZSJ9.signature1234
 
 # 적용 후 (safe-mode ON)
-+ANTHROPIC_API_KEY = "sk-***gh"
++AI_API_KEY = "sk-***gh"
 +ADMIN_EMAIL = "h***@example.com"
 +password=***MASKED***
 +Authorization: Bearer ***MASKED***
@@ -360,9 +362,9 @@ LLM 으로 흘려보낼 수 있다는 점을 기본 가정으로 둡니다. `--s
   없이 단일 응답에서 모든 결과를 얻도록 프롬프트가 설계되어 있습니다.
 - 호출이 끝나면 `[INFO] AI API 호출 횟수: 1회` 와 토큰/지연/모델을
   반드시 로그로 남겨 비용 추적이 가능합니다.
-- 기본 모델은 비용 친화적인 `claude-haiku-4-5-20251001` 입니다. 평균
-  PR 1건(diff ~400줄)이 입력 토큰 3,000~5,000 / 출력 400~600 수준에서
-  처리되며 Haiku 단가 기준 1회당 수 cent 내외입니다.
+- 기본 모델은 `gpt-5.4`이며, 실제 비용과 사용량은 프록시 및 선택한 모델의
+  정책을 따릅니다. 모델별 비용이 걱정되면 `--model`과 safe-mode를 함께
+  사용해 입력량과 호출 횟수를 제한하세요.
 - 큰 diff 가 우려되는 환경에서는 `--safe-mode --max-lines 200` 으로
   입력을 강제로 한도 내로 묶어 비용 폭주를 막을 수 있습니다.
 
@@ -420,7 +422,7 @@ API 키가 필요한 실제 응답 캡처는 외부 비용/키 관리를 고려�
 | 증상 | 원인 / 해결 |
 |---|---|
 | `[ERROR] AI_API_KEY ... 설정되지 않았습니다` | 환경변수가 비어 있음. PowerShell/Bash 예시대로 설정 후 재실행. |
-| `[ERROR] AI API 인증 실패` | 키가 잘못되었거나 만료. Anthropic 콘솔에서 키 재발급. |
+| `[ERROR] AI API 인증 실패` | 키가 잘못되었거나 만료. API 제공자에서 키 상태 확인. |
 | `[ERROR] AI API 호출이 속도 제한에 걸렸습니다` | 분당 호출 한도 초과. 잠시 대기 후 재시도. |
 | `[ERROR] AI API 서버에 접속할 수 없습니다` | 방화벽/네트워크 문제. 회사망/프록시 환경 확인. |
 | `[ERROR] git ... 실패: not a git repository` | Git 저장소가 아닌 디렉터리에서 실행. `--cwd` 로 저장소를 지정하거나 `git init` 후 재시도. |

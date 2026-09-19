@@ -17,7 +17,7 @@ from .ai_client import (
     AIClientError,
     DEFAULT_MODEL,
     MissingAPIKeyError,
-    call_anthropic,
+    call_openai,
 )
 from .git_ops import GitError, snapshot
 from .prompts import build_commit_prompt, build_pr_prompt
@@ -139,7 +139,7 @@ def cmd_commit(args: argparse.Namespace) -> int:
         return 0
 
     info("AI API 요청 중...")
-    ai = call_anthropic(
+    ai = call_openai(
         bundle.system,
         bundle.user,
         model=args.model,
@@ -178,7 +178,7 @@ def cmd_pr(args: argparse.Namespace) -> int:
         return 0
 
     info("AI API 요청 중...")
-    ai = call_anthropic(
+    ai = call_openai(
         bundle.system,
         bundle.user,
         model=args.model,
