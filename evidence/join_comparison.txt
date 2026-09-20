@@ -1,0 +1,39 @@
+Q15 실행 후: 위 결과 LEFT JOIN, 아래 결과 INNER JOIN
+
+-- Q15 실행 후: 주문 없는 한예린 고객의 포함 여부를 비교한다.
+SELECT c.customer_id, c.name, COUNT(o.order_id) AS order_count
+FROM customer AS c
+LEFT JOIN cafe_order AS o ON c.customer_id = o.customer_id
+GROUP BY c.customer_id, c.name
+ORDER BY c.customer_id;
+
+SELECT c.customer_id, c.name, COUNT(o.order_id) AS order_count
+FROM customer AS c
+INNER JOIN cafe_order AS o ON c.customer_id = o.customer_id
+GROUP BY c.customer_id, c.name
+ORDER BY c.customer_id;
+
+customer_id | name | order_count
+--- | --- | ---
+1 | 김민준 | 2
+2 | 이서연 | 2
+3 | 박지호 | 1
+4 | 최하윤 | 1
+5 | 정도윤 | 1
+6 | 강지민 | 1
+7 | 윤서준 | 1
+8 | 장수아 | 1
+9 | 임현우 | 1
+10 | 한예린 | 0
+
+customer_id | name | order_count
+--- | --- | ---
+1 | 김민준 | 2
+2 | 이서연 | 2
+3 | 박지호 | 1
+4 | 최하윤 | 1
+5 | 정도윤 | 1
+6 | 강지민 | 1
+7 | 윤서준 | 1
+8 | 장수아 | 1
+9 | 임현우 | 1

@@ -1,3 +1,11 @@
+-- 테이블/PK 역할: customer.customer_id 고객 식별, staff.staff_id 직원 식별,
+-- menu_category.category_id 분류 식별, menu_item.menu_item_id 메뉴 식별,
+-- cafe_order.order_id 주문 식별, order_item.order_item_id 주문 상세 행 식별.
+-- 부모 1 : 자식 N 관계 (부모는 자식 0개도 허용):
+-- menu_category -> menu_item(category_id), customer -> cafe_order(customer_id),
+-- staff -> cafe_order(staff_id), cafe_order -> order_item(order_id),
+-- menu_item -> order_item(menu_item_id). 모든 FK는 NOT NULL로 부모 하나를 참조한다.
+-- DATE/DATETIME은 SQLite에서 날짜 유효성을 강제하지 않는다. 시드는 ISO 형식 TEXT를 사용한다.
 PRAGMA foreign_keys = ON;
 
 DROP TABLE IF EXISTS order_item;

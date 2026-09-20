@@ -143,7 +143,7 @@ dine_in | 17466.7
 takeout | 12166.7
 
 ## Q12
-Q12. 서브쿼리로 고객별 결제 완료 매출을 계산해 Q10과 같은 요구를 다른 방식으로 푼다.
+Q12. 상관 서브쿼리로 전체 고객의 결제 완료 매출을 계산하고 매출이 없으면 0을 표시한다.
 customer_id | name | paid_total
 --- | --- | ---
 2 | 이서연 | 34200
@@ -162,7 +162,7 @@ Q13. 주문 일시 검색을 빠르게 하기 위해 인덱스를 만들고 SQLi
 CREATE 실행 완료
 id | parent | notused | detail
 --- | --- | --- | ---
-4 | 0 | 0 | SEARCH cafe_order USING INDEX idx_cafe_order_ordered_at (ordered_at>?)
+4 | 0 | 203 | SEARCH cafe_order USING INDEX idx_cafe_order_ordered_at (ordered_at>?)
 
 ## Q14
 Q14. 대기 상태 주문을 결제 완료로 UPDATE하고 변경 결과를 확인한다.

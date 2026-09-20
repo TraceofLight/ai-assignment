@@ -1,0 +1,19 @@
+사전평가 보완 검증 (2026-09-20)
+환경: Windows / Python 3.12.10 / SQLite 3.49.1
+
+python -X utf8 scripts/run.py: 통과
+python -X utf8 scripts/verify.py: 통과
+
+추가 실행 검증:
+- 새 메모리 DB에서 query_viewer.execute_block으로 Q01~Q15를 순서대로 실행하고 evidence/query_results.txt와 공백을 제외한 출력 전체 일치 확인
+- README의 Q01~Q15 결과 블록과 evidence/query_results.txt 일치 확인
+- Q11의 paid 상세 18행 확인
+- joined_at 및 ordered_at의 실제 typeof 값 text 확인
+- 메뉴 1 현재가격을 5000원으로 임시 변경해도 주문 101의 과거 총액 13800원 유지 확인 후 롤백
+- Q15 후 동일 조건 LEFT JOIN 10행, INNER JOIN 9행 및 한예린 0건/제외 확인
+- PRAGMA foreign_key_check 위반 0건 확인
+- 문서 상대 링크와 README 앵커 존재 확인
+- 실제 실행 창 캡처 16개 시각 검토 및 JPEG 시그니처/서로 다른 파일 해시 확인
+
+캡처 원본의 실제 포맷은 JPEG이며 .jpg 확장자로 보존했다.
+Docker 빌드 및 외부 AI 재평가는 이번 보완 작업에서 실행하지 않았다.
