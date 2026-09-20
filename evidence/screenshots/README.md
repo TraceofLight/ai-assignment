@@ -1,8 +1,8 @@
 # SQL 실제 실행 화면
 
-2026-09-20 Windows / Python 3.12.10 / SQLite 3.49.1에서 `python scripts/query_viewer.py`로 실행한 자체 SQLite 클라이언트의 원본 화면 캡처다. Python sqlite3가 SQL을 실행하고 tkinter가 SQL과 결과를 표시한다. 사전 작성된 결과 텍스트를 이미지로 변환한 자료가 아니다.
+2026-09-20 Windows / Python 3.12.10 / SQLite 3.49.1에서 `python scripts/query_viewer.py`로 실행한 자체 SQLite 클라이언트의 화면 캡처를 바탕으로 정리한 자료다. Python sqlite3가 SQL을 실행하고 tkinter가 SQL과 결과를 표시한다. 사전 작성된 결과 텍스트를 이미지로 변환한 자료가 아니다.
 
-새 메모리 DB에 schema.sql과 seed.sql을 적재하고 FK를 활성화한 후 Q01→Q15를 순서대로 실행했다. Q01~Q13은 초기 시드, Q14는 주문 110 수정 후, Q15는 주문 112와 상세 삭제 후 결과다. 캡처는 해당 창만 저장했으며 이미지 합성이나 내용 편집을 하지 않았다.
+새 메모리 DB에 schema.sql과 seed.sql을 적재하고 FK를 활성화한 후 Q01→Q15를 순서대로 실행했다. Q01~Q13은 초기 시드, Q14는 주문 110 수정 후, Q15는 주문 112와 상세 삭제 후 결과다.
 
 [SQL 원본](../../sql/queries.sql) · [전체 텍스트 결과](../query_results.txt) · [실행 클라이언트 소스](../../scripts/query_viewer.py)
 

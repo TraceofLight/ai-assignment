@@ -1,6 +1,6 @@
 # SQL로 만드는 카페 주문 데이터베이스
 
-평가 항목별 근거는 [사전평가 보완 문답과 근거 색인](docs/assessment-review.md), 실제 실행 화면은 [쿼리별 캡처](evidence/screenshots/README.md)에서 확인할 수 있다.
+실제 실행 화면은 [쿼리별 캡처](evidence/screenshots/README.md)에서 확인할 수 있다.
 
 ## 주제와 실행 환경
 
@@ -40,7 +40,6 @@ DB 파일: evidence/cafe_orders.db
 | `scripts/run.py` | 전체 파이프라인 실행과 evidence 생성 |
 | `scripts/query_viewer.py` | 실제 SQL을 순차 실행하는 데스크톱 캡처 클라이언트 |
 | `evidence/screenshots/README.md` | Q01~Q15 및 JOIN 비교 실행 화면과 재현 조건 |
-| `docs/assessment-review.md` | 서브에이전트 문답과 평가 15개 항목의 근거 색인 |
 | `scripts/verify.py` | 테이블 행 수, FK 동작, 쿼리 범주, evidence 존재 여부 검증 |
 | `evidence/sample_row_counts.txt` | 각 테이블에 10행 이상 샘플 데이터가 들어갔는지 확인한 결과 |
 | `evidence/query_results.txt` | 쿼리 15개의 실행 결과 텍스트 |
