@@ -1,0 +1,7 @@
+UTC 2026-09-26T15:36:35.225656+00:00
+Authentication: instance_principal (no user API key)
+network-subnet-read: exit=0, success
+nsg-rules-list: exit=0, success
+denied-iam-policies: exit=1, NotAuthorizedOrNotFound
+denied-block-volumes: exit=1, NotAuthorizedOrNotFound
+nsg-rules-update: exit=0, existing HTTP rule preserved; no access expansion

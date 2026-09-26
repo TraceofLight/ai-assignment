@@ -1,0 +1,4 @@
+UTC 2026-09-26T15:37:52.357247+00:00
+Client: Windows PC outside OCI instance
+PASS http://<PUBLIC_IP>/health: 200, body=b'OK'
+PASS http://<PUBLIC_IP>/: 200, HELLO CLOUD

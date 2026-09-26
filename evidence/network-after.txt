@@ -1,0 +1,11 @@
+검증: OCI API 조회 및 접속 확인 결과에서 과제 관련 항목만 발췌.
+실제 리소스 이름·주소·OCID는 생략했다.
+VCN / Subnet: 기존 VCN의 public subnet, 공인 IP 사용 가능
+Internet Gateway: enabled
+Route: 0.0.0.0/0 -> Internet Gateway
+NSG: 실습용 NSG 연결
+NSG ingress: TCP 80, 443 from 0.0.0.0/0, stateful
+SSH: TCP22 from <ADMIN_IP>/32
+UFW: 실습 HTTP/HTTPS 허용, 기존 운영 규칙 보존
+SSH after source restriction: connected
+Outbound: HTTPS 요청 200 확인

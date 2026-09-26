@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Content-Type: text/plain; charset=utf-8
+Server: Caddy
+Date: Sat, 26 Sep 2026 14:25:00 GMT
+Content-Length: 2
+
+OK
+NAMES                                STATUS              PORTS
+b6-1-cloud-lab                       Up About a minute
