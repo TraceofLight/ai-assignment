@@ -11,6 +11,7 @@
 ## 실행
 [src/index.html](src/index.html)을 브라우저에서 연다. 외부 라이브러리나 서버는 필요 없다.
 Python 3.10 이상에서 `python scripts/run.py`로 문서·HTML 링크를 점검한다.
+깨진 링크가 있으면 해당 파일과 대상 경로를 출력하고 종료 코드 1을 반환한다.
 기존 Git 규칙 유틸리티의 테스트는 `python -m unittest discover -s tests`로 실행한다.
 
 ## 작업 기준
