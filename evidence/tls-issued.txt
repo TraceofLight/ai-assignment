@@ -1,0 +1,13 @@
+{"level":"info","ts":1790438607.2204804,"logger":"tls.obtain","msg":"releasing lock","identifier":"www.codyssey-domain-test.kro.kr"}
+{"level":"info","ts":1790438607.2231138,"logger":"tls.obtain","msg":"acquiring lock","identifier":"www.codyssey-domain-test.kro.kr"}
+{"level":"info","ts":1790438607.2260277,"logger":"tls.obtain","msg":"lock acquired","identifier":"www.codyssey-domain-test.kro.kr"}
+{"level":"info","ts":1790438607.2263973,"logger":"tls.obtain","msg":"obtaining certificate","identifier":"www.codyssey-domain-test.kro.kr"}
+{"level":"info","ts":1790438608.224578,"logger":"http.acme_client","msg":"trying to solve challenge","identifier":"www.codyssey-domain-test.kro.kr","challenge_type":"http-01","ca":"https://acme-v02.api.letsencrypt.org/directory"}
+{"level":"info","ts":1790438611.5064802,"logger":"http.acme_client","msg":"authorization finalized","identifier":"www.codyssey-domain-test.kro.kr","authz_status":"valid"}
+{"level":"info","ts":1790438611.5065184,"logger":"http.acme_client","msg":"validations succeeded; finalizing order","order":"https://acme-v02.api.letsencrypt.org/acme/order/3794066076/562102432456"}
+{"level":"info","ts":1790438612.9856286,"logger":"http.acme_client","msg":"got renewal info","names":["www.codyssey-domain-test.kro.kr"],"window_start":1795542545,"window_end":1795697995,"selected_time":1795677286,"recheck_after":1790461096.98562,"explanation_url":""}
+{"level":"info","ts":1790438613.3709166,"logger":"http.acme_client","msg":"got renewal info","names":["www.codyssey-domain-test.kro.kr"],"window_start":1795542545,"window_end":1795697995,"selected_time":1795640123,"recheck_after":1790456499.3709087,"explanation_url":""}
+{"level":"info","ts":1790438613.761145,"logger":"http.acme_client","msg":"got renewal info","names":["www.codyssey-domain-test.kro.kr"],"window_start":1795542545,"window_end":1795697995,"selected_time":1795626175,"recheck_after":1790463271.7611372,"explanation_url":""}
+{"level":"info","ts":1790438613.7612164,"logger":"http.acme_client","msg":"successfully downloaded available certificate chains","count":3,"first_url":"https://acme-v02.api.letsencrypt.org/acme/cert/05e05ec0104e3b3ada60ae5fdc0604cf4aaa"}
+{"level":"info","ts":1790438613.7671998,"logger":"tls.obtain","msg":"certificate obtained successfully","identifier":"www.codyssey-domain-test.kro.kr","issuer":"acme-v02.api.letsencrypt.org-directory"}
+{"level":"info","ts":1790438613.767324,"logger":"tls.obtain","msg":"releasing lock","identifier":"www.codyssey-domain-test.kro.kr"}

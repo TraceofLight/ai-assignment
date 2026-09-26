@@ -35,10 +35,12 @@
 
 근거: [http-before.txt](../evidence/http-before.txt), [deployment.txt](../evidence/deployment.txt), [http-after.txt](../evidence/http-after.txt), [network-after.txt](../evidence/network-after.txt).
 
-## 4. 공유 도메인의 Let's Encrypt 인증서 발급 한도 — 확인 중
+## 4. 공유 도메인의 Let's Encrypt 인증서 발급 한도 — 해결
 
 - **증상:** ACME `HTTP 429`, `too many certificates (50) already issued for "kro.kr" in the last 168h0m0s`.
 - **가설·검증:** 발급 서버가 공유 상위 도메인 기준 제한을 명시. HTTP 애플리케이션 오류와 별개.
-- **조치:** DNS와 외부 80/443을 먼저 확인하고 Caddy의 자동 재시도를 유지. 자체 서명 인증서를 정상 공개 HTTPS 증빙으로 사용하지 않음.
-- **결과:** 인증서 발급 성공은 아직 미확인. 최초 응답의 재시도 안내 시각은 `2026-09-26 16:03:02 UTC`(한국 시각 2026-09-27 01:03:02)이며 발급 성공을 보장하지 않음.
+- **조치:** 2026-09-27 00:53 KST에 사용자 A 레코드 반영을 공용 DNS 두 곳과 서버에서 확인했다. HTTP 308 → HTTPS 리다이렉트도 확인. Caddy의 자동 재시도를 유지하며 CA가 안내한 시각 전에 강제 재발급을 반복하지 않는다. 자체 서명 인증서를 정상 공개 HTTPS 증빙으로 사용하지 않음.
+- **결과:** 재시도 안내 시각(`2026-09-26 16:03 UTC`, KST 2026-09-27 01:03) 이후 `caddy reload --config /etc/caddy/Caddyfile --force`를 한 번 실행. 운영 CA HTTP-01 검증 및 공개 인증서 발급 성공. 외부 HTTPS 200 + `OK`, 기본 CA 신뢰·호스트명 검증 통과. 컨테이너/VM 재시작 없이 적용.
 - **재발 방지:** 공유 무료 도메인도 상위 도메인 단위 제한 영향을 받을 수 있음을 기록. 공개 IP HTTP 검증과 HTTPS 보너스 결과를 분리.
+
+근거: [DNS](../evidence/dns-verified.txt), [발급 로그](../evidence/tls-issued.txt), [HTTPS 응답](../evidence/https-after.txt), [인증서](../evidence/tls-certificate.json). 참고: [Caddy reload](https://caddyserver.com/docs/command-line#caddy-reload), [Let’s Encrypt 재시도 정책](https://letsencrypt.org/docs/rate-limits/#retrying-after-hitting-rate-limits).

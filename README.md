@@ -4,6 +4,8 @@ AWS 과제를 Oracle Cloud Infrastructure(OCI)에 대응해 구현한 실습이�
 
 ## 접속과 제출물
 
+**최종 접속 주소: [https://www.codyssey-domain-test.kro.kr/](https://www.codyssey-domain-test.kro.kr/)** — 2026-09-27 01:03 KST HTTPS와 인증서 검증 완료.
+
 - **외부 검증 방식 A:** 브라우저에서 [웹 페이지](http://152.67.213.106/) 정상 표시 확인.
 - 방식 B도 확인: [GET /health](http://152.67.213.106/health) → **HTTP 200**, 본문 `OK`.
 - 검증 시각: **2026-09-27 00:37 KST**. Windows PC에서 직접 공인 IP로 호출했다.
@@ -58,9 +60,22 @@ python scripts/verify.py
 
 ## 도메인·HTTPS 상태
 
-예정 도메인: `www.codyssey-domain-test.kro.kr`. DNS 관리 화면에서 **IP연결(A)** 체크, 왼쪽 호스트에 `www`, 오른쪽에 `152.67.213.106`을 입력한다. 웹포워딩·AAAA·CNAME은 필요하지 않다. 도메인 전체를 호스트 칸에 넣거나 IP에 `http://`·포트를 붙이지 않는다.
+사용 도메인: `www.codyssey-domain-test.kro.kr`. DNS 관리 화면에서 **IP연결(A)** 체크, 왼쪽 호스트에 `www`, 오른쪽에 `152.67.213.106`을 입력한다. 웹포워딩·AAAA·CNAME은 필요하지 않다. 도메인 전체를 호스트 칸에 넣거나 IP에 `http://`·포트를 붙이지 않는다.
 
-현재 apex와 `www` 모두 DNS 조회 실패 상태다. Caddy에는 자동 TLS 설정을 준비했지만, Let's Encrypt의 공유 `kro.kr` 발급 한도 429도 관찰되었다. **HTTPS 보너스는 아직 완료되지 않았다.** A 레코드 반영과 인증서 발급 성공 후 `python scripts/verify.py https://www.codyssey-domain-test.kro.kr`로 별도 확인한다. 공인 IP HTTP와 Docker 보너스는 검증을 완료했다.
+2026-09-27 00:53 KST에 공용 DNS 두 곳(1.1.1.1/8.8.8.8), 로컬 PC, 서버에서 `www` A 레코드가 공인 IP로 해석됨을 확인했다. apex는 설정하지 않았으며 **주소에 `www`를 포함**해야 한다. HTTP 도메인 접속은 HTTPS로 308 리다이렉트된다. [DNS 검증](evidence/dns-verified.txt) 참고.
+
+Let's Encrypt 공유 `kro.kr` 발급 한도 429가 발생했으나, 안내된 재시도 시각 이후 Caddy 설정을 한 번 재적용하여 **공개 인증서 발급과 HTTPS 보너스 검증을 완료**했다. 공인 IP HTTP도 계속 제공한다.
+
+- 외부 HTTPS `/` → 200, `/health` → 200 + `OK`: [응답 증빙](evidence/https-after.txt).
+- 인증서: Let's Encrypt `YE1`, SAN `www.codyssey-domain-test.kro.kr`, 만료 `2026-12-25 15:05 UTC`. 기본 CA 신뢰 및 호스트명 검증 통과, TLS 1.3 연결 확인: [인증서 메타데이터](evidence/tls-certificate.json).
+- 발급 과정: [Caddy 로그](evidence/tls-issued.txt). Caddy의 인증서 저장·자동 갱신 설정 유지.
+- 기존 컨테이너 ID·시작 시각 및 health 보존: [TLS 적용 후 검증](evidence/preservation-after-tls.txt).
+
+```bash
+python scripts/verify.py https://www.codyssey-domain-test.kro.kr
+```
+
+![HTTPS 접속 화면](evidence/screenshots/https-page.png)
 
 ## 보존과 원복
 

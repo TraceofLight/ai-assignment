@@ -17,7 +17,7 @@
 | OS UFW | 80/443 허용 없음 | `b6-1-http`, `b6-1-https` 규칙(IPv4/IPv6) | 추가 표시 파일이 있는 해당 규칙만 제거 |
 | OCI NSG | VNIC의 NSG 없음 | `b6-1-web` 생성, TCP80/443 공개 후 VNIC 연결 | 해당 NSG만 분리·제거 |
 | OCI Security List SSH | TCP22 source `0.0.0.0/0` | `112.153.56.84/32`, 설명 `b6-1-ssh-admin` | 향후 상태 비교 후 해당 규칙의 source·설명만 이전 값으로 복구 |
-| DNS | 사용자 설정 전 | `www.codyssey-domain-test.kro.kr` A → `152.67.213.106` 예정·등록 대기 | 향후 등록한 경우 해당 신규 레코드만 제거 |
+| DNS | 사용자 설정 전 | `www.codyssey-domain-test.kro.kr` A → `152.67.213.106` 사용자 등록·DNS 조회 확인 | 해당 신규 레코드만 제거 |
 | OCI API 서명 키 | 실습 키 없음 | 사용자 제공 키로 `/home/ubuntu/.oci/b6-1-user/config`, `api_key.pem` 구성·인증 성공 | 다른 용도 사용 여부 확인 후 해당 실습 키·config만 정리 |
 | OCI IAM | 실습 Dynamic Group/Policy 없음 | `b6-1-ai-research`, `b6-1-network-lab` 생성 | 전용 Policy 후 Dynamic Group 제거 |
 | 기존 거래 서비스·NetBird | 실행 중 | 변경 없음 | 중지·삭제·재시작하지 않음 |

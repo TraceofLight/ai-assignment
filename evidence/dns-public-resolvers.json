@@ -1,0 +1,16 @@
+[
+  {
+    "Resolver": "1.1.1.1",
+    "Name": "www.codyssey-domain-test.kro.kr",
+    "Type": 1,
+    "TTL": 300,
+    "IPAddress": "152.67.213.106"
+  },
+  {
+    "Resolver": "8.8.8.8",
+    "Name": "www.codyssey-domain-test.kro.kr",
+    "Type": 1,
+    "TTL": 300,
+    "IPAddress": "152.67.213.106"
+  }
+]
