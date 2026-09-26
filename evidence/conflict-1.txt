@@ -1,0 +1,48 @@
+diff --cc README.md
+index 298ceca,474c84d..0000000
+--- a/README.md
++++ b/README.md
+@@@ -5,8 -5,8 +5,13 @@@
+  | 역할 이름 | GitHub | 소개 |
+  | --- | --- | --- |
+  | TraceofLight | [TraceofLight](https://github.com/TraceofLight) | [소개](team/traceoflight.md) |
+++<<<<<<< HEAD
+ +| nansu | [nansu0425](https://github.com/nansu0425) | 소개 문서 작업 예정 |
+ +| chanpago | [chanpago](https://github.com/chanpago) | [소개](team/chanpago.md) |
+++=======
++ | nansu | [nansu0425](https://github.com/nansu0425) | [소개](team/nansu0425.md) |
++ | chanpago | [chanpago](https://github.com/chanpago) | 소개 문서 작업 예정 |
+++>>>>>>> b2-2
+  
+  ## 실행
+  [src/index.html](src/index.html)을 브라우저에서 연다. 외부 라이브러리나 서버는 필요 없다.
+diff --cc src/index.html
+index 281d3e0,54cdede..0000000
+--- a/src/index.html
++++ b/src/index.html
+@@@ -8,11 -8,11 +8,19 @@@
+  <body>
+    <main>
+      <h1>Codyssey 팀 소개</h1>
+++<<<<<<< HEAD
+ +    <p id="summary">세 사람의 소개와 학습 기록을 한곳에서 찾습니다.</p>
+ +    <h2>팀원</h2>
+ +    <ul>
+ +      <li><a href="../team/traceoflight.md">TraceofLight · 페이지 구성</a></li>
+ +      <li><a href="../team/chanpago.md">chanpago · 탐색과 검증</a></li>
+++=======
++     <p id="summary">이슈와 PR로 작업을 나누고 검토합니다.</p>
++     <h2>팀원</h2>
++     <ul>
++       <li><a href="../team/traceoflight.md">TraceofLight · 페이지 구성</a></li>
++       <li><a href="../team/nansu0425.md">nansu0425 · 협업 안내</a></li>
+++>>>>>>> b2-2
+      </ul>
+      <p><a href="../SUBMISSION.md">제출 인덱스</a></p>
+      <p><a href="../docs/CONTRIBUTING.md">협업 규칙</a></p>
+UU README.md
+M  docs/CONTRIBUTING.md
+UU src/index.html
+A  team/nansu0425.md
+a8d017c48ceed3509ef34d9ada6dd4e44e5040ba
+28b64a4e357c2ec0d41b5236616d9d18a0b7e6e3
