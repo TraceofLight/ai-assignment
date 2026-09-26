@@ -6,7 +6,7 @@
 | --- | --- | --- |
 | TraceofLight | [TraceofLight](https://github.com/TraceofLight) | [소개](team/traceoflight.md) |
 | nansu | [nansu0425](https://github.com/nansu0425) | [소개](team/nansu0425.md) |
-| chanpago | [chanpago](https://github.com/chanpago) | 소개 문서 작업 예정 |
+| chanpago | [chanpago](https://github.com/chanpago) | [소개](team/chanpago.md) |
 
 ## 실행
 [src/index.html](src/index.html)을 브라우저에서 연다. 외부 라이브러리나 서버는 필요 없다.
