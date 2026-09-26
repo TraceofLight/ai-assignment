@@ -13,7 +13,7 @@ index 298ceca,474c84d..0000000
 + | nansu | [nansu0425](https://github.com/nansu0425) | [소개](team/nansu0425.md) |
 + | chanpago | [chanpago](https://github.com/chanpago) | 소개 문서 작업 예정 |
 ++>>>>>>> b2-2
-  
+
   ## 실행
   [src/index.html](src/index.html)을 브라우저에서 연다. 외부 라이브러리나 서버는 필요 없다.
 diff --cc src/index.html

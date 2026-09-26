@@ -17,6 +17,8 @@
 | nansu0425 | 페이지 제목과 학습 안내 정리 | [#9](https://github.com/TraceofLight/ai-assignment/issues/9) | [#11](https://github.com/TraceofLight/ai-assignment/pull/11) |
 | chanpago | 충돌 재검증과 제출 인덱스 완성 | [#10](https://github.com/TraceofLight/ai-assignment/issues/10) | [#12](https://github.com/TraceofLight/ai-assignment/pull/12) |
 
+후속 정리: [Issue #13](https://github.com/TraceofLight/ai-assignment/issues/13) · [PR #14](https://github.com/TraceofLight/ai-assignment/pull/14) — 실행 증빙의 줄 끝 공백 정규화.
+
 ## 검토 항목과 반영
 아래는 댓글에 표시한 검토 역할별 인덱스다. 독립된 계정의 승인 횟수를 의미하지 않는다.
 | 역할 | 다른 역할의 PR 검토 항목 | 수정 후 답글 |
@@ -37,7 +39,7 @@
 | 항목 | 결과 |
 | --- | --- |
 | 팀 소개 문서 및 HTML | 세 역할의 소개와 링크 구성 |
-| 역할별 PR | 각 2개, 총 6개 |
+| 역할별 주요 PR | 각 2개, 총 6개 + 증빙 정리 후속 PR 1개 |
 | 검토와 반영 | 위 댓글 및 수정 커밋으로 연결 |
 | 충돌 | 동일 hunk 충돌 2회 실제 실행 |
 | Git 실습 | amend, reset --soft, 원격 push 후 revert, stash/pop |
