@@ -22,3 +22,5 @@ Allow dynamic-group id <DYNAMIC_GROUP_OCID> to {
 [실행 증빙](../evidence/iam.txt). 초기 생성·연결 작업과 이후 제한 역할의 검증 범위를 구분한다. 이후 검증은 `oci --auth instance_principal ...`로 실행했다.
 
 네트워크 규칙은 패킷 접근을, IAM은 리소스 API 작업을 제어한다. IAM 권한이 있어도 HTTP 포트가 막히면 웹 접속은 실패하고, 웹에 접속할 수 있어도 OCI 리소스 변경 권한이 생기지 않는다.
+
+[추가 역할 검증](../evidence/limited-role.json)

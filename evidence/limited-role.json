@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-09-26T16:53:25.355096+00:00",
+  "authentication": "instance_principal",
+  "dynamic_group_id": "<DYNAMICGROUP_OCID>",
+  "policy_id": "<POLICY_OCID>",
+  "operations": [
+    {
+      "label": "vcn-read",
+      "utc": "2026-09-26T16:53:27.600880+00:00",
+      "command": "oci --auth instance_principal --region <REGION> network vcn get --vcn-id <VCN_OCID>",
+      "exit_code": 0,
+      "result": "success"
+    },
+    {
+      "label": "subnet-read",
+      "utc": "2026-09-26T16:53:29.734263+00:00",
+      "command": "oci --auth instance_principal --region <REGION> network subnet get --subnet-id <SUBNET_OCID>",
+      "exit_code": 0,
+      "result": "success"
+    },
+    {
+      "label": "vnic-read",
+      "utc": "2026-09-26T16:53:31.873052+00:00",
+      "command": "oci --auth instance_principal --region <REGION> network vnic get --vnic-id <VNIC_OCID>",
+      "exit_code": 0,
+      "result": "success"
+    },
+    {
+      "label": "route-table-read",
+      "utc": "2026-09-26T16:53:34.018282+00:00",
+      "command": "oci --auth instance_principal --region <REGION> network route-table get --rt-id <ROUTETABLE_OCID>",
+      "exit_code": 0,
+      "result": "success"
+    },
+    {
+      "label": "internet-gateway-read",
+      "utc": "2026-09-26T16:53:36.346855+00:00",
+      "command": "oci --auth instance_principal --region <REGION> network internet-gateway get --ig-id <INTERNETGATEWAY_OCID>",
+      "exit_code": 0,
+      "result": "success"
+    },
+    {
+      "label": "security-list-read",
+      "utc": "2026-09-26T16:53:38.142719+00:00",
+      "command": "oci --auth instance_principal --region <REGION> network security-list get --security-list-id <SECURITYLIST_OCID>",
+      "exit_code": 0,
+      "result": "success"
+    },
+    {
+      "label": "nsg-read",
+      "utc": "2026-09-26T16:53:40.076087+00:00",
+      "command": "oci --auth instance_principal --region <REGION> network nsg get --nsg-id <NETWORKSECURITYGROUP_OCID>",
+      "exit_code": 0,
+      "result": "success"
+    },
+    {
+      "label": "nsg-rules-before",
+      "utc": "2026-09-26T16:53:42.046156+00:00",
+      "command": "oci --auth instance_principal --region <REGION> network nsg rules list --nsg-id <NETWORKSECURITYGROUP_OCID> --all",
+      "exit_code": 0,
+      "result": "success"
+    },
+    {
+      "label": "nsg-rules-reapply",
+      "utc": "2026-09-26T16:53:44.020620+00:00",
+      "command": "oci --auth instance_principal --region <REGION> network nsg rules update --nsg-id <NETWORKSECURITYGROUP_OCID> --security-rules '[{\"id\": \"9C0F02\", \"description\": \"b6-1-http\", \"direction\": \"INGRESS\", \"protocol\": \"6\", \"source\": \"0.0.0.0/0\", \"sourceType\": \"CIDR_BLOCK\", \"isStateless\": false, \"tcpOptions\": {\"destinationPortRange\": {\"min\": 80, \"max\": 80}}}, {\"id\": \"1D3914\", \"description\": \"b6-1-https\", \"direction\": \"INGRESS\", \"protocol\": \"6\", \"source\": \"0.0.0.0/0\", \"sourceType\": \"CIDR_BLOCK\", \"isStateless\": false, \"tcpOptions\": {\"destinationPortRange\": {\"min\": 443, \"max\": 443}}}]'",
+      "exit_code": 0,
+      "result": "success"
+    },
+    {
+      "label": "nsg-rules-after",
+      "utc": "2026-09-26T16:53:46.166105+00:00",
+      "command": "oci --auth instance_principal --region <REGION> network nsg rules list --nsg-id <NETWORKSECURITYGROUP_OCID> --all",
+      "exit_code": 0,
+      "result": "success"
+    },
+    {
+      "label": "denied-iam-policies",
+      "utc": "2026-09-26T16:53:47.584511+00:00",
+      "command": "oci --auth instance_principal --region <REGION> iam policy list --compartment-id <COMPARTMENT_OCID> --all",
+      "exit_code": 1,
+      "result": "NotAuthorizedOrNotFound"
+    },
+    {
+      "label": "denied-block-volumes",
+      "utc": "2026-09-26T16:53:49.939415+00:00",
+      "command": "oci --auth instance_principal --region <REGION> bv volume list --compartment-id <COMPARTMENT_OCID> --all",
+      "exit_code": 1,
+      "result": "NotAuthorizedOrNotFound"
+    }
+  ],
+  "nsg_rules_unchanged": true,
+  "finished_at": "2026-09-26T16:53:49.939415+00:00",
+  "redaction_note": "실제 리소스 식별자를 placeholder로 치환한 실행 증빙"
+}
