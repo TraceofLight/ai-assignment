@@ -1,0 +1,28 @@
+diff --cc src/index.html
+index 17b2c43,7a5f2c1..0000000
+--- a/src/index.html
++++ b/src/index.html
+@@@ -3,11 -3,11 +3,19 @@@
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+++<<<<<<< HEAD
+ +  <title>Codyssey · 협업 실습 기록</title>
+ +</head>
+ +<body>
+ +  <main>
+ +    <h1>Codyssey · 협업 실습 기록</h1>
+++=======
++   <title>Codyssey · 팀 소개와 Git 학습</title>
++ </head>
++ <body>
++   <main>
++     <h1>Codyssey · 팀 소개와 Git 학습</h1>
+++>>>>>>> b2-2
+      <p id="summary">세 사람의 소개와 학습 기록을 모으고, 이슈와 PR로 작업을 나누어 검토합니다.</p>
+      <h2>팀원</h2>
+      <ul>
+UU src/index.html
+M  team/nansu0425.md
+e4aeb1d7f6f077ea8317172fef1a621420ff3b4b
+48dcae849d4efe0b2317fe886de7e668100a0803

@@ -24,9 +24,12 @@ def main():
         "README.md", "SUBMISSION.md", "src/index.html",
         "docs/CONTRIBUTING.md", "docs/conflict-resolution.md",
         "docs/troubleshooting-log.md", "team/traceoflight.md",
+        "team/nansu0425.md", "team/chanpago.md",
     ]
     errors = [f"누락: {name}" for name in required if not (ROOT / name).is_file()]
-    pages = [ROOT / "README.md", ROOT / "SUBMISSION.md", *sorted((ROOT / "team").glob("*.md"))]
+    pages = [ROOT / "README.md", ROOT / "SUBMISSION.md"]
+    pages += sorted((ROOT / "team").glob("*.md"))
+    pages += sorted((ROOT / "docs").glob("*.md"))
     html_path = ROOT / "src/index.html"
     if html_path.is_file():
         pages.append(html_path)
