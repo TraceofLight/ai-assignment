@@ -23,10 +23,10 @@ M  docs/git-practice.md
  Author: Chanpago <jch8659@gmail.com>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-remote: 
-remote: Create a pull request for 'feature/traceoflight-git-practice' on GitHub by visiting:        
-remote:      https://github.com/TraceofLight/ai-assignment/pull/new/feature/traceoflight-git-practice        
-remote: 
+remote:
+remote: Create a pull request for 'feature/traceoflight-git-practice' on GitHub by visiting:
+remote:      https://github.com/TraceofLight/ai-assignment/pull/new/feature/traceoflight-git-practice
+remote:
 branch 'feature/traceoflight-git-practice' set up to track 'origin/feature/traceoflight-git-practice'.
 To https://github.com/TraceofLight/ai-assignment.git
  * [new branch]      feature/traceoflight-git-practice -> feature/traceoflight-git-practice
