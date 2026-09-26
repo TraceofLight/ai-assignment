@@ -3,6 +3,8 @@
 통합 대상은 b2-2이며 feature/<계정>-<작업>에서 변경한다.
 GitHub Flow를 사용해 변경 단위를 작게 유지하고 이슈와 PR로 추적한다.
 공유 브랜치의 강제 push, reset, rebase는 사용하지 않는다.
+통합 브랜치가 바뀌면 작업 브랜치에서 `git fetch origin` 후 `git merge origin/b2-2`를 실행한다.
+검토 반영 또는 충돌 해결 후 `python scripts/run.py`와 `python -m unittest discover -s tests`를 다시 실행한다.
 
 ## 커밋
 형식은 `type(module): English description`이다.
