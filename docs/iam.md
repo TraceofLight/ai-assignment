@@ -36,6 +36,31 @@ Allow dynamic-group id <DYNAMIC_GROUP_OCID> to {
 
 설정 전 Instance Principal은 네트워크 조회도 거부되었다. 계정 키 인증 성공과 역할의 최소권한 검증은 서로 다른 결과로 기록한다. 초기 리소스 생성·연결은 기존 사용자 인증으로 수행했고, 제한 역할은 이후 네트워크 조회·NSG 규칙 관리용이다.
 
+## 초기 준비와 제한 역할 실습 기록
+
+과제는 **IAM 사용자 또는 Role**을 허용하므로, 사용자 결정에 따라 별도 IAM 계정을 생성하지 않고 기존 `b6-1-ai-research` 역할을 사용한다. 이메일·콘솔 비밀번호·새 사용자 API 키가 필요하지 않다.
+
+1. **초기 준비:** 기존 관리자 프로필 `B6_LAB`으로 네트워크 구성과 실습 Dynamic Group/Policy 생성을 수행했다. 이 이력을 제한 역할 수행으로 바꾸어 기록하지 않는다.
+2. **제한 역할 실습:** ai-research에 SSH로 접속한 뒤 모든 OCI 명령에 `--auth instance_principal`을 명시한다. 네트워크 구성 조회, 기존 HTTP/HTTPS NSG 규칙 재적용, 전후 규칙 동일 여부 및 IAM/볼륨 조회 거부를 실제 검증한다. [별도 실행 증빙](../evidence/limited-role.json) 참고.
+3. **실행 범위:** 해당 compartment의 네트워크 조회와 NSG 규칙 수정만 허용한다. 초기 리소스 생성·VNIC 연결·Security List 변경을 이 역할로 수행했다는 의미는 아니다. 서버 SSH/OS 권한과 OCI IAM 권한도 별개다.
+
+이는 사용자와 합의한 **초기 구성 후 제한 역할로 실습** 방식의 기록이다. 원문을 초기 준비까지 관리자 사용 금지로 해석하면 그 부분은 대체한 진행 조건에 해당한다. 실습 역할 자체에는 관리자 권한을 부여하지 않았다.
+
+새 계정 준비 중 생성했던 빈 그룹 `b6-1-operators`와 정책 `b6-1-operator-network`는 계정을 만들지 않기로 한 사용자 결정에 따라 제거했다. 새 사용자·키는 생성하지 않았으며 기존 역할·서비스는 유지한다.
+
+2026-09-27 01:53~01:54 KST 재검증 결과:
+
+| 수행 항목 | 결과 |
+|---|---|
+| VCN/Subnet/VNIC/Route Table/IGW/Security List/NSG 조회 | 제한 역할로 모두 성공 |
+| NSG HTTP80·HTTPS443 규칙 재적용 | 제한 역할의 UpdateNetworkSecurityGroupSecurityRules 성공 |
+| 적용 전후 NSG 규칙 비교 | 두 규칙의 전체 조회 결과 동일, 접근 범위 변화 없음 |
+| IAM 정책·Block Volume 목록 조회 | 각각 `NotAuthorizedOrNotFound` 거부 |
+| 별도 계정 준비 리소스 정리 | 임시 그룹·정책 부재 및 기존 사용자 1명만 존재 확인 |
+| 외부 HTTP/HTTPS·기존 서비스 | 모두 정상, 기존 컨테이너 ID·시작 시각 동일 |
+
+외부 접속과 기존 서비스 보존 근거: [preservation-after-role.txt](../evidence/preservation-after-role.txt).
+
 ## 권한과 네트워크의 차이
 
 웹 요청 허용 여부는 NSG/Security List/UFW가 판단한다. IAM permission이 있어도 네트워크 80번이 닫혀 있으면 HTTP 접속은 실패하며, 웹 페이지가 열려 있어도 OCI API 권한이 생기지는 않는다.

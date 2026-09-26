@@ -1,0 +1,17 @@
+UTC 2026-09-26T16:54:12.618863+00:00
+> python scripts/verify.py
+PASS http://152.67.213.106/health: 200, body=b'OK'
+PASS http://152.67.213.106/: 200, HELLO CLOUD
+
+> python scripts/verify.py https://www.codyssey-domain-test.kro.kr
+PASS https://www.codyssey-domain-test.kro.kr/health: 200, body=b'OK'
+PASS https://www.codyssey-domain-test.kro.kr/: 200, HELLO CLOUD
+
+/openclaw-trading-mirofish-1 112ab2ef0cfccae8a914322fd0b164daa978596967ff106935663fe204e66065 2026-09-05T17:41:47.629214001Z
+/openclaw-trading-execution-tools-1 0b3af82f9454a371961778792a504c1485b54df5e3310a30098d69d82922590f 2026-09-05T17:41:47.595096651Z
+{
+  "service": "MiroFish Backend",
+  "status": "ok"
+}
+active
+active

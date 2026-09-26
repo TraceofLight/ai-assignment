@@ -27,7 +27,7 @@ AWS 과제를 Oracle Cloud Infrastructure(OCI)에 대응해 구현한 실습이�
 | Internet Gateway·Route Table | 기존 `ai-research-igw` 및 기본 라우트 재사용 | `0.0.0.0/0 → IGW`, IGW enabled |
 | EC2 생성 | 기존 OCI A1.Flex `ai-research`, 4 OCPU / 24 GB | SSH·기존 서비스 확인 |
 | Security Group | 전용 NSG `b6-1-web` + 기존 Security List + 호스트 UFW | TCP 80/443 공개, SSH 22는 `112.153.56.84/32` |
-| IAM Role | `b6-1-ai-research` Dynamic Group + Instance Principal | 네트워크 조회·NSG 규칙 수정 허용, IAM·볼륨 조회 거부 |
+| IAM 사용자 또는 Role | 별도 계정 없이 `b6-1-ai-research` Dynamic Group + Instance Principal | 초기 준비와 역할 실습을 구분; [실제 조회·규칙 재적용·권한 거부 증빙](evidence/limited-role.json) |
 | 웹 서버 | Caddy Docker 컨테이너 | 내부·외부 HTTP 200 |
 | 종료·삭제 | **사용자 지시로 실행하지 않음** | 변경 명세와 향후 원복 순서 기록 |
 

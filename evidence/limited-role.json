@@ -1,0 +1,103 @@
+{
+  "started_at": "2026-09-26T16:53:25.355096+00:00",
+  "authentication": "instance_principal",
+  "dynamic_group_id": "ocid1.dynamicgroup.oc1..aaaaaaaaefk7ohqrpaeigip4c4fu2styyl5wxs4k6oqlwzdvcn7yqxop5jzq",
+  "policy_id": "ocid1.policy.oc1..aaaaaaaalan7sjcwxvccfynpyjlcslvyvm6ctyjs7zlawvxngqlkeegavo6q",
+  "operations": [
+    {
+      "label": "vcn-read",
+      "utc": "2026-09-26T16:53:27.600880+00:00",
+      "command": "oci --auth instance_principal --region ap-chuncheon-1 network vcn get --vcn-id ocid1.vcn.oc1.ap-chuncheon-1.amaaaaaajjfhilialcve7ose62kyf3tdzqfxaluhfg5kxdf6ivrmtnokrxrq",
+      "exit_code": 0,
+      "result": "success"
+    },
+    {
+      "label": "subnet-read",
+      "utc": "2026-09-26T16:53:29.734263+00:00",
+      "command": "oci --auth instance_principal --region ap-chuncheon-1 network subnet get --subnet-id ocid1.subnet.oc1.ap-chuncheon-1.aaaaaaaajvzbq2oxnhidc2xjnp6h6sy2toqr5psqgtrsgxus6oq5st3niemq",
+      "exit_code": 0,
+      "result": "success"
+    },
+    {
+      "label": "vnic-read",
+      "utc": "2026-09-26T16:53:31.873052+00:00",
+      "command": "oci --auth instance_principal --region ap-chuncheon-1 network vnic get --vnic-id ocid1.vnic.oc1.ap-chuncheon-1.ab4w4ljrj33ospqzqvl63buvqv3v4tjvlsyeydkucj76t5qoogahsrkczt7q",
+      "exit_code": 0,
+      "result": "success"
+    },
+    {
+      "label": "route-table-read",
+      "utc": "2026-09-26T16:53:34.018282+00:00",
+      "command": "oci --auth instance_principal --region ap-chuncheon-1 network route-table get --rt-id ocid1.routetable.oc1.ap-chuncheon-1.aaaaaaaabyfsf65liczdi2ke5s6joovrff4dadqslkiffonohh5ulchgpdnq",
+      "exit_code": 0,
+      "result": "success"
+    },
+    {
+      "label": "internet-gateway-read",
+      "utc": "2026-09-26T16:53:36.346855+00:00",
+      "command": "oci --auth instance_principal --region ap-chuncheon-1 network internet-gateway get --ig-id ocid1.internetgateway.oc1.ap-chuncheon-1.aaaaaaaafheh3cp25gam43ok6z43laaj7pgx3qhrmydatekdxv7k57hbznaa",
+      "exit_code": 0,
+      "result": "success"
+    },
+    {
+      "label": "security-list-read",
+      "utc": "2026-09-26T16:53:38.142719+00:00",
+      "command": "oci --auth instance_principal --region ap-chuncheon-1 network security-list get --security-list-id ocid1.securitylist.oc1.ap-chuncheon-1.aaaaaaaam7jmecdcmmlk6lm72mlljuxrfgtlv4s2u5klg27dsz2ioa2scdzq",
+      "exit_code": 0,
+      "result": "success"
+    },
+    {
+      "label": "nsg-read",
+      "utc": "2026-09-26T16:53:40.076087+00:00",
+      "command": "oci --auth instance_principal --region ap-chuncheon-1 network nsg get --nsg-id ocid1.networksecuritygroup.oc1.ap-chuncheon-1.aaaaaaaa4vnadp6q2zcmdbt5t4nx6fvky2hvxs2rznnvt2zqjkd2kpb4oq6q",
+      "exit_code": 0,
+      "result": "success"
+    },
+    {
+      "label": "nsg-rules-before",
+      "utc": "2026-09-26T16:53:42.046156+00:00",
+      "command": "oci --auth instance_principal --region ap-chuncheon-1 network nsg rules list --nsg-id ocid1.networksecuritygroup.oc1.ap-chuncheon-1.aaaaaaaa4vnadp6q2zcmdbt5t4nx6fvky2hvxs2rznnvt2zqjkd2kpb4oq6q --all",
+      "exit_code": 0,
+      "result": "success"
+    },
+    {
+      "label": "nsg-rules-reapply",
+      "utc": "2026-09-26T16:53:44.020620+00:00",
+      "command": "oci --auth instance_principal --region ap-chuncheon-1 network nsg rules update --nsg-id ocid1.networksecuritygroup.oc1.ap-chuncheon-1.aaaaaaaa4vnadp6q2zcmdbt5t4nx6fvky2hvxs2rznnvt2zqjkd2kpb4oq6q --security-rules '[{\"id\": \"9C0F02\", \"description\": \"b6-1-http\", \"direction\": \"INGRESS\", \"protocol\": \"6\", \"source\": \"0.0.0.0/0\", \"sourceType\": \"CIDR_BLOCK\", \"isStateless\": false, \"tcpOptions\": {\"destinationPortRange\": {\"min\": 80, \"max\": 80}}}, {\"id\": \"1D3914\", \"description\": \"b6-1-https\", \"direction\": \"INGRESS\", \"protocol\": \"6\", \"source\": \"0.0.0.0/0\", \"sourceType\": \"CIDR_BLOCK\", \"isStateless\": false, \"tcpOptions\": {\"destinationPortRange\": {\"min\": 443, \"max\": 443}}}]'",
+      "exit_code": 0,
+      "result": "success"
+    },
+    {
+      "label": "nsg-rules-after",
+      "utc": "2026-09-26T16:53:46.166105+00:00",
+      "command": "oci --auth instance_principal --region ap-chuncheon-1 network nsg rules list --nsg-id ocid1.networksecuritygroup.oc1.ap-chuncheon-1.aaaaaaaa4vnadp6q2zcmdbt5t4nx6fvky2hvxs2rznnvt2zqjkd2kpb4oq6q --all",
+      "exit_code": 0,
+      "result": "success"
+    },
+    {
+      "label": "denied-iam-policies",
+      "utc": "2026-09-26T16:53:47.584511+00:00",
+      "command": "oci --auth instance_principal --region ap-chuncheon-1 iam policy list --compartment-id ocid1.compartment.oc1..aaaaaaaavytnrppsr5blsgzut4xhdh5fhspnrwnpp4xiitmkdgd7gt3wh6lq --all",
+      "exit_code": 1,
+      "result": "NotAuthorizedOrNotFound"
+    },
+    {
+      "label": "denied-block-volumes",
+      "utc": "2026-09-26T16:53:49.939415+00:00",
+      "command": "oci --auth instance_principal --region ap-chuncheon-1 bv volume list --compartment-id ocid1.compartment.oc1..aaaaaaaavytnrppsr5blsgzut4xhdh5fhspnrwnpp4xiitmkdgd7gt3wh6lq --all",
+      "exit_code": 1,
+      "result": "NotAuthorizedOrNotFound"
+    }
+  ],
+  "nsg_rules_unchanged": true,
+  "finished_at": "2026-09-26T16:53:49.939415+00:00",
+  "configuration_review": {
+    "method": "read-only inspection using initial administrator profile B6_LAB",
+    "dynamic_group_matching_rule": "instance.id = 'ocid1.instance.oc1.ap-chuncheon-1.an4w4ljrjjfhilicwnam244wwqnf4gmwmhywtj2hp4kuq5tzw7qfrdx5tm6q'",
+    "policy_statements": [
+      "Allow dynamic-group id ocid1.dynamicgroup.oc1..aaaaaaaaefk7ohqrpaeigip4c4fu2styyl5wxs4k6oqlwzdvcn7yqxop5jzq to {VCN_READ, SUBNET_READ, VNIC_READ, ROUTE_TABLE_READ, INTERNET_GATEWAY_READ, SECURITY_LIST_READ, NETWORK_SECURITY_GROUP_READ, NETWORK_SECURITY_GROUP_LIST_SECURITY_RULES, NETWORK_SECURITY_GROUP_UPDATE_SECURITY_RULES} in compartment id ocid1.compartment.oc1..aaaaaaaavytnrppsr5blsgzut4xhdh5fhspnrwnpp4xiitmkdgd7gt3wh6lq"
+    ],
+    "new_iam_user_created": false,
+    "temporary_operator_group_and_policy_removed": true
+  }
+}
