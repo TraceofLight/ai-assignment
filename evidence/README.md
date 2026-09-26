@@ -1,0 +1,9 @@
+# 증빙 범위
+- 실행·확인 날짜: 2026-10-09 (KST).
+- 코드 검증 스냅샷: 3e33d7ea59d6fd56d1d96817bcf854d76859e159.
+- conflict-1.txt와 conflict-2.txt는 실제 충돌 직후의 git diff --cc 및 status 출력이다.
+- git-practice.txt는 네 가지 Git 명령 실습 출력이다. amend/reset 전 커밋은 로컬에서만 존재할 수 있다.
+- git-log-graph.txt와 commit-timeline.txt는 증빙 파일 커밋 전의 스냅샷이다.
+- validation.txt는 링크 검사와 테스트 7건의 실제 출력이다.
+- 이후 문서 인덱스와 최종 병합 상태는 GitHub PR 및 b2-2 이력을 확인한다.
+- 커밋 메타데이터와 GitHub 이벤트 생성 시각을 구분한다.

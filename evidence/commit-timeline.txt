@@ -1,0 +1,28 @@
+스냅샷 HEAD: 3e33d7ea59d6fd56d1d96817bcf854d76859e159
+명령: git log --reverse --date-order --format="%h | %an | %aI | %cI | %s" b9618ee..HEAD
+열: SHA | 작성자 | AuthorDate | CommitDate | 제목
+메타데이터 기준일: 2026-09-26 (KST)
+
+f196593 | TraceofLight | 2026-09-26T09:10:00+09:00 | 2026-09-26T09:10:00+09:00 | feat(team): build a minimal introduction page
+13db166 | TraceofLight | 2026-09-26T09:27:00+09:00 | 2026-09-26T09:27:00+09:00 | docs(team): address navigation and validation feedback
+61a9d66 | TraceofLight | 2026-09-26T09:44:00+09:00 | 2026-09-26T09:44:00+09:00 | chore(collaboration): merge feature/traceoflight-team-page
+3647b35 | nansu0425 | 2026-09-26T10:01:00+09:00 | 2026-09-26T10:01:00+09:00 | feat(team): add nansu introduction and workflow
+29a0bad | nansu0425 | 2026-09-26T10:18:00+09:00 | 2026-09-26T10:18:00+09:00 | docs(collaboration): clarify integration and recheck steps
+a8d017c | Chanpago | 2026-09-26T10:35:00+09:00 | 2026-09-26T10:35:00+09:00 | feat(team): add chanpago navigation and introduction
+28b64a4 | TraceofLight | 2026-09-26T10:52:00+09:00 | 2026-09-26T10:52:00+09:00 | chore(collaboration): merge feature/nansu0425-team-guide
+4ca6495 | Chanpago | 2026-09-26T11:26:00+09:00 | 2026-09-26T11:26:00+09:00 | fix(team): preserve both introductions during merge
+64b541e | TraceofLight | 2026-09-26T11:43:00+09:00 | 2026-09-26T11:43:00+09:00 | chore(collaboration): merge feature/chanpago-team-navigation
+abf6201 | TraceofLight | 2026-09-26T12:00:00+09:00 | 2026-09-26T12:17:00+09:00 | docs(collaboration): describe the verified page baseline
+5dbc08b | nansu0425 | 2026-09-26T12:51:00+09:00 | 2026-09-26T12:51:00+09:00 | docs(collaboration): document soft reset without losing edits
+30f3bf5 | Chanpago | 2026-09-26T13:08:00+09:00 | 2026-09-26T13:08:00+09:00 | docs(collaboration): introduce a validation rollback exercise
+89b5e79 | Chanpago | 2026-09-26T13:25:00+09:00 | 2026-09-26T13:25:00+09:00 | docs(collaboration): restore the validation requirement
+f6bac09 | TraceofLight | 2026-09-26T13:59:00+09:00 | 2026-09-26T13:59:00+09:00 | docs(collaboration): record restored in-progress notes
+6dd8ba6 | TraceofLight | 2026-09-26T14:16:00+09:00 | 2026-09-26T14:16:00+09:00 | docs(collaboration): capture four Git troubleshooting exercises
+ed4e450 | TraceofLight | 2026-09-26T14:33:00+09:00 | 2026-09-26T14:33:00+09:00 | docs(collaboration): clarify replay of rewritten local commits
+376988b | TraceofLight | 2026-09-26T14:50:00+09:00 | 2026-09-26T14:50:00+09:00 | chore(collaboration): merge feature/traceoflight-git-practice
+27c0443 | nansu0425 | 2026-09-26T15:07:00+09:00 | 2026-09-26T15:07:00+09:00 | docs(team): connect page purpose and learning notes
+d5e7bb6 | nansu0425 | 2026-09-26T15:24:00+09:00 | 2026-09-26T15:24:00+09:00 | docs(team): expose learning links on the entry page
+e4aeb1d | Chanpago | 2026-09-26T15:41:00+09:00 | 2026-09-26T15:41:00+09:00 | docs(team): describe the collaboration evidence page
+48dcae8 | TraceofLight | 2026-09-26T15:58:00+09:00 | 2026-09-26T15:58:00+09:00 | chore(collaboration): merge feature/nansu0425-page-guide
+63c81ef | Chanpago | 2026-09-26T16:32:00+09:00 | 2026-09-26T16:32:00+09:00 | fix(team): merge page headings and broaden link checks
+3e33d7e | Chanpago | 2026-09-26T16:49:00+09:00 | 2026-09-26T16:49:00+09:00 | test(submission): verify missing members and broken documentation links
