@@ -1,10 +1,6 @@
 [project]
 name = "git-collaboration-workflow"
-version = "0.1.0"
-description = "Git 협업 워크플로우 과제용 재현 가능한 Python 유틸리티"
+version = "0.2.0"
+description = "Codyssey 팀 소개 HTML과 Git 협업 실습"
 requires-python = ">=3.10"
 dependencies = []
-
-[tool.codyssey]
-runtime_image = "ubuntu:24.04"
-entrypoint = "scripts/run.py"
