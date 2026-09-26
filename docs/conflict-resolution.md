@@ -24,3 +24,4 @@
 - 관련 PR: [#12](https://github.com/TraceofLight/ai-assignment/pull/12)
 - 재현: 별도 임시 clone에서 e4aeb1d를 checkout하고 48dcae8을 merge.
 - 예방: 같은 제목을 여러 브랜치에서 변경할 때는 통합 문구를 먼저 합의.
+- 해결 커밋: 63c81ef87dfc27a70499d45c6aa6a9502241da67

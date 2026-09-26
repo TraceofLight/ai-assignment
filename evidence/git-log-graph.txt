@@ -1,0 +1,41 @@
+실행일: 2026-10-09
+스냅샷 HEAD: 3e33d7ea59d6fd56d1d96817bcf854d76859e159
+명령: git log --oneline --graph --all --ancestry-path b9618ee..HEAD
+범위: 기존 과제 기준 이후의 b2-2 작업 이력. 이 증빙 파일 자체와 최종 병합 커밋은 스냅샷 이후다.
+
+* 3e33d7e test(submission): verify missing members and broken documentation links
+*   63c81ef fix(team): merge page headings and broaden link checks
+|\
+| *   48dcae8 chore(collaboration): merge feature/nansu0425-page-guide
+| |\
+| | * d5e7bb6 docs(team): expose learning links on the entry page
+| | * 27c0443 docs(team): connect page purpose and learning notes
+| |/
+* / e4aeb1d docs(team): describe the collaboration evidence page
+|/
+*   376988b chore(collaboration): merge feature/traceoflight-git-practice
+|\
+| * ed4e450 docs(collaboration): clarify replay of rewritten local commits
+| * 6dd8ba6 docs(collaboration): capture four Git troubleshooting exercises
+| * f6bac09 docs(collaboration): record restored in-progress notes
+| * 89b5e79 docs(collaboration): restore the validation requirement
+| * 30f3bf5 docs(collaboration): introduce a validation rollback exercise
+| * 5dbc08b docs(collaboration): document soft reset without losing edits
+| * abf6201 docs(collaboration): describe the verified page baseline
+|/
+*   64b541e chore(collaboration): merge feature/chanpago-team-navigation
+|\
+| *   4ca6495 fix(team): preserve both introductions during merge
+| |\
+| |/
+|/|
+* |   28b64a4 chore(collaboration): merge feature/nansu0425-team-guide
+|\ \
+| * | 29a0bad docs(collaboration): clarify integration and recheck steps
+| * | 3647b35 feat(team): add nansu introduction and workflow
+|/ /
+| * a8d017c feat(team): add chanpago navigation and introduction
+|/
+* 61a9d66 chore(collaboration): merge feature/traceoflight-team-page
+* 13db166 docs(team): address navigation and validation feedback
+* f196593 feat(team): build a minimal introduction page
