@@ -4,7 +4,7 @@ AWS의 VPC·EC2·Security Group을 OCI의 VCN·Compute·NSG에 대응한 실습�
 
 ## 제출물과 접속 검증
 
-- HTTPS 연결 예정 URL: **https://www.codyssey-domain-test.kro.kr/** (현재 증빙은 공인 IP HTTP 기준)
+- 서비스 URL: **https://www.codyssey-domain-test.kro.kr/**
 - 선택한 외부 검증 방식: **A — 브라우저 접속**. 방식 B인 `/health`의 HTTP 200과 `OK`도 확인했다.
 - 공인 IP HTTP 검증: [결과](evidence/http-after.txt). 서버 주소는 `<PUBLIC_IP>`로 치환했다.
 - [아키텍처](docs/architecture.png), [IAM](docs/iam.md), [트러블슈팅](docs/troubleshooting.md), [정리 체크리스트](docs/cleanup-checklist.md).
@@ -50,6 +50,6 @@ python scripts/verify.py https://www.codyssey-domain-test.kro.kr
 
 ## 도메인과 HTTPS
 
-DNS A 레코드 연결과 공개 HTTPS 발급을 준비했다. 현재 단계에서는 외부 공인 IP HTTP 접속을 확인했다. 인증서 자동 갱신을 위해 Caddy 데이터 디렉터리를 유지한다.
+DNS A 레코드를 배포 대상 공인 IP로 연결하고 Caddy로 Let's Encrypt 인증서를 발급했다. HTTP는 HTTPS로 리다이렉트된다. 인증서 자동 갱신을 위해 Caddy 데이터 디렉터리를 유지한다.
 
 HTTPS 검증 결과와 인증서 신뢰 검증은 해당 증빙 파일에 기록한다. 재배포 시에는 `Caddyfile`의 도메인을 자신의 도메인으로 변경한다.

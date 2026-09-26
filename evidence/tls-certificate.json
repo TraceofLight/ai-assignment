@@ -1,0 +1,42 @@
+{
+  "verified_at_utc": "2026-09-26T16:03:34.227172+00:00",
+  "host": "www.codyssey-domain-test.kro.kr",
+  "tls_version": "TLSv1.3",
+  "verification": "default CA trust + hostname verification; no insecure override",
+  "subject": [
+    [
+      [
+        "commonName",
+        "www.codyssey-domain-test.kro.kr"
+      ]
+    ]
+  ],
+  "issuer": [
+    [
+      [
+        "countryName",
+        "US"
+      ]
+    ],
+    [
+      [
+        "organizationName",
+        "Let's Encrypt"
+      ]
+    ],
+    [
+      [
+        "commonName",
+        "YE1"
+      ]
+    ]
+  ],
+  "not_before": "Sep 26 15:05:01 2026 GMT",
+  "not_after": "Dec 25 15:05:00 2026 GMT",
+  "subject_alt_name": [
+    [
+      "DNS",
+      "www.codyssey-domain-test.kro.kr"
+    ]
+  ]
+}

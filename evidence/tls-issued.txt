@@ -1,0 +1,1 @@
+{"level":"info","ts":1790438613.7671998,"logger":"tls.obtain","msg":"certificate obtained successfully","identifier":"www.codyssey-domain-test.kro.kr","issuer":"acme-v02.api.letsencrypt.org-directory"}
