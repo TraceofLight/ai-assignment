@@ -8,4 +8,6 @@
 | chanpago | chanpago | Chanpago | jch8659@gmail.com | [기존 커밋](https://github.com/GTLBruteForce/KawaiiFluid/commit/6a9c94e719e64a671c1fb272905fce78e1dfbd1c) |
 
 새 커밋에서도 GitHub API author.login이 해당 계정에 연결되는 것을 확인했다.
-Committer와 GitHub PR·댓글 작성 계정은 TraceofLight다.
+현재 b2-2의 Committer 이름·이메일은 각 커밋의 Author와 일치한다.
+GitHub PR·댓글 작성 계정은 TraceofLight다.
+기존 PR과 실행 증빙에 남아 있는 SHA는 [변경 전후 대응표](commit-id-map.md)에서 현재 SHA와 연결할 수 있다.
