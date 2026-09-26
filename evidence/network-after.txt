@@ -1,0 +1,14 @@
+Verified 2026-09-27 KST through OCI API
+VCN: vcn-ai-research, CIDR 10.10.0.0/16
+Subnet: research-subnet, CIDR 10.10.1.0/24, public IP allowed
+VNIC: ai-research-vnic, private 10.10.1.250, public 152.67.213.106
+Internet Gateway: ai-research-igw, enabled
+Route: 0.0.0.0/0 -> ai-research-igw
+NSG before: none
+NSG after: b6-1-web attached
+NSG ingress: TCP 80, 443 from 0.0.0.0/0, stateful
+Security List: SSH TCP22 from 112.153.56.84/32 (was 0.0.0.0/0)
+Security List: ICMP rules and egress unchanged
+UFW: b6-1-http and b6-1-https added; pre-existing SSH rules preserved
+Fresh SSH after source restriction: connected
+Docker/NetBird: active; MiroFish health: ok

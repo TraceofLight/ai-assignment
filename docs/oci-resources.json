@@ -1,0 +1,21 @@
+{
+  "region": "ap-chuncheon-1",
+  "instance_id": "ocid1.instance.oc1.ap-chuncheon-1.an4w4ljrjjfhilicwnam244wwqnf4gmwmhywtj2hp4kuq5tzw7qfrdx5tm6q",
+  "compartment_id": "ocid1.compartment.oc1..aaaaaaaavytnrppsr5blsgzut4xhdh5fhspnrwnpp4xiitmkdgd7gt3wh6lq",
+  "vcn_id": "ocid1.vcn.oc1.ap-chuncheon-1.amaaaaaajjfhilialcve7ose62kyf3tdzqfxaluhfg5kxdf6ivrmtnokrxrq",
+  "subnet_id": "ocid1.subnet.oc1.ap-chuncheon-1.aaaaaaaajvzbq2oxnhidc2xjnp6h6sy2toqr5psqgtrsgxus6oq5st3niemq",
+  "vnic_id": "ocid1.vnic.oc1.ap-chuncheon-1.ab4w4ljrj33ospqzqvl63buvqv3v4tjvlsyeydkucj76t5qoogahsrkczt7q",
+  "security_list_id": "ocid1.securitylist.oc1.ap-chuncheon-1.aaaaaaaam7jmecdcmmlk6lm72mlljuxrfgtlv4s2u5klg27dsz2ioa2scdzq",
+  "route_table_id": "ocid1.routetable.oc1.ap-chuncheon-1.aaaaaaaabyfsf65liczdi2ke5s6joovrff4dadqslkiffonohh5ulchgpdnq",
+  "internet_gateway_id": "ocid1.internetgateway.oc1.ap-chuncheon-1.aaaaaaaafheh3cp25gam43ok6z43laaj7pgx3qhrmydatekdxv7k57hbznaa",
+  "lab_nsg_id": "ocid1.networksecuritygroup.oc1.ap-chuncheon-1.aaaaaaaa4vnadp6q2zcmdbt5t4nx6fvky2hvxs2rznnvt2zqjkd2kpb4oq6q",
+  "lab_nsg_name": "b6-1-web",
+  "lab_dynamic_group_id": "ocid1.dynamicgroup.oc1..aaaaaaaaefk7ohqrpaeigip4c4fu2styyl5wxs4k6oqlwzdvcn7yqxop5jzq",
+  "lab_policy_id": "ocid1.policy.oc1..aaaaaaaalan7sjcwxvccfynpyjlcslvyvm6ctyjs7zlawvxngqlkeegavo6q",
+  "ssh_source_before": "0.0.0.0/0",
+  "ssh_source_after": "112.153.56.84/32",
+  "ssh_description_before": null,
+  "ssh_description_after": "b6-1-ssh-admin",
+  "vnic_nsg_ids_before": [],
+  "keep_until_explicit_rollback": true
+}

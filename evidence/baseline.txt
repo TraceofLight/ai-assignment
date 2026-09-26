@@ -1,0 +1,62 @@
+2026-09-26T14:21:42+00:00
+ai-research-vnic
+aarch64
+ 14:21:42 up 20 days, 20:40,  1 user,  load average: 0.11, 0.06, 0.01
+               total        used        free      shared  buff/cache   available
+Mem:           23974        1138       18137           5        5021       22836
+Swap:           8191           0        8191
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1       193G   46G  148G  24% /
+CONTAINER ID                                                       NAMES                                STATUS       PORTS
+112ab2ef0cfccae8a914322fd0b164daa978596967ff106935663fe204e66065   openclaw-trading-mirofish-1          Up 2 weeks   127.0.0.1:3000->3000/tcp, 127.0.0.1:5001->5001/tcp
+0b3af82f9454a371961778792a504c1485b54df5e3310a30098d69d82922590f   openclaw-trading-execution-tools-1   Up 2 weeks   
+/openclaw-trading-mirofish-1 112ab2ef0cfccae8a914322fd0b164daa978596967ff106935663fe204e66065 2026-09-05T17:41:47.629214001Z
+/openclaw-trading-execution-tools-1 0b3af82f9454a371961778792a504c1485b54df5e3310a30098d69d82922590f 2026-09-05T17:41:47.595096651Z
+REPOSITORY                         TAG       DIGEST                                                                    IMAGE ID       CREATED        SIZE
+openclaw-trading-mirofish          latest    <none>                                                                    407ead8397ae   5 months ago   2.61GB
+openclaw-trading-execution-tools   latest    <none>                                                                    27a91c094b83   5 months ago   545MB
+ollama/ollama                      latest    sha256:0ff452f6a4c3c5bb4ab063a1db190b261d5834741a519189ed5301d50e4434d1   04ca2a095336   6 months ago   5.54GB
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), deny (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+22/tcp                     ALLOW IN    112.153.56.84              # admin current public ip
+22/tcp                     ALLOW IN    Anywhere                  
+22/tcp (v6)                ALLOW IN    Anywhere (v6)             
+
+State  Recv-Q Send-Q  Local Address:Port  Peer Address:PortProcess
+LISTEN 0      4096        127.0.0.1:44039      0.0.0.0:*          
+LISTEN 0      4096        127.0.0.1:3000       0.0.0.0:*          
+LISTEN 0      4096   100.127.186.58:53         0.0.0.0:*          
+LISTEN 0      4096          0.0.0.0:631        0.0.0.0:*          
+LISTEN 0      4096          0.0.0.0:22         0.0.0.0:*          
+LISTEN 0      4096          0.0.0.0:111        0.0.0.0:*          
+LISTEN 0      4096    127.0.0.53%lo:53         0.0.0.0:*          
+LISTEN 0      4096        127.0.0.1:5001       0.0.0.0:*          
+LISTEN 0      4096       127.0.0.54:53         0.0.0.0:*          
+LISTEN 0      4096             [::]:631           [::]:*          
+LISTEN 0      4096             [::]:22            [::]:*          
+LISTEN 0      4096             [::]:111           [::]:*          
+{
+  "service": "MiroFish Backend",
+  "status": "ok"
+}
+HTTP/2 200 
+date: Sat, 26 Sep 2026 14:21:42 GMT
+content-type: text/html
+server: cloudflare
+last-modified: Sat, 26 Sep 2026 09:09:07 GMT
+allow: GET, HEAD
+accept-ranges: bytes
+age: 2076
+cf-cache-status: HIT
+cf-ray: a412eaa568d4d809-ICN
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0

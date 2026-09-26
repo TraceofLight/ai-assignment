@@ -1,0 +1,28 @@
+2026-09-26T15:37:57+00:00
+NAMES            IMAGE                                                                           STATUS             PORTS
+b6-1-cloud-lab   caddy@sha256:6aeddd44c3078b0f9a35206472a11420648a79c184603ef95957d0a20044cb2b   Up About an hour   
+network=host user=1000:1000 readonly=true cap_add=["CAP_NET_BIND_SERVICE"] cap_drop=["ALL"] restart=unless-stopped
+HTTP/1.1 200 OK
+Content-Type: text/plain; charset=utf-8
+Server: Caddy
+Date: Sat, 26 Sep 2026 15:37:57 GMT
+Content-Length: 2
+
+OK
+/openclaw-trading-mirofish-1 112ab2ef0cfccae8a914322fd0b164daa978596967ff106935663fe204e66065 2026-09-05T17:41:47.629214001Z
+/openclaw-trading-execution-tools-1 0b3af82f9454a371961778792a504c1485b54df5e3310a30098d69d82922590f 2026-09-05T17:41:47.595096651Z
+{
+  "service": "MiroFish Backend",
+  "status": "ok"
+}
+active
+active
+Valid configuration
+{"level":"info","ts":1790437077.9590816,"msg":"using config from file","file":"/etc/caddy/Caddyfile"}
+{"level":"info","ts":1790437077.9605587,"msg":"adapted config to JSON","adapter":"caddyfile"}
+{"level":"info","ts":1790437077.961483,"logger":"http.auto_https","msg":"server is listening only on the HTTPS port but has no TLS connection policies; adding one to enable TLS","server_name":"srv0","https_port":443}
+{"level":"info","ts":1790437077.9615126,"logger":"http.auto_https","msg":"enabling automatic HTTP->HTTPS redirects","server_name":"srv0"}
+{"level":"warn","ts":1790437077.9615283,"logger":"http.auto_https","msg":"server is listening only on the HTTP port, so no automatic HTTPS will be applied to this server","server_name":"srv1","http_port":80}
+{"level":"info","ts":1790437077.9615672,"logger":"tls.cache.maintenance","msg":"started background certificate maintenance","cache":"0x2da08ee0f480"}
+{"level":"info","ts":1790437077.9616888,"logger":"http","msg":"servers shutting down with eternal grace period"}
+{"level":"info","ts":1790437077.9617908,"logger":"tls.cache.maintenance","msg":"stopped background certificate maintenance","cache":"0x2da08ee0f480"}

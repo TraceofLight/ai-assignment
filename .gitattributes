@@ -1,0 +1,6 @@
+* text=auto
+*.sh text eol=lf
+*.txt text eol=lf
+Caddyfile text eol=lf
+# 명령 출력의 원래 공백·줄바꿈을 증빙으로 보존한다.
+evidence/*.txt -text -whitespace

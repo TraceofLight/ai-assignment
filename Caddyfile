@@ -1,0 +1,21 @@
+{
+	admin localhost:2019
+}
+
+:80 {
+	root * /srv
+	respond /health "OK" 200
+	file_server
+	log {
+		output stdout
+	}
+}
+
+www.codyssey-domain-test.kro.kr {
+	root * /srv
+	respond /health "OK" 200
+	file_server
+	log {
+		output stdout
+	}
+}

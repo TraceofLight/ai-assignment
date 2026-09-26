@@ -1,0 +1,36 @@
+HTTP/1.1 200 OK
+Content-Type: text/plain; charset=utf-8
+Server: Caddy
+Date: Sat, 26 Sep 2026 14:25:00 GMT
+Content-Length: 2
+
+OKNAMES                                STATUS              PORTS
+b6-1-cloud-lab                       Up About a minute   
+openclaw-trading-mirofish-1          Up 2 weeks          127.0.0.1:3000->3000/tcp, 127.0.0.1:5001->5001/tcp
+openclaw-trading-execution-tools-1   Up 2 weeks          
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), deny (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+22/tcp                     ALLOW IN    112.153.56.84              # admin current public ip
+22/tcp                     ALLOW IN    Anywhere                  
+80/tcp                     ALLOW IN    Anywhere                   # b6-1-http
+443/tcp                    ALLOW IN    Anywhere                   # b6-1-https
+22/tcp (v6)                ALLOW IN    Anywhere (v6)             
+80/tcp (v6)                ALLOW IN    Anywhere (v6)              # b6-1-http
+443/tcp (v6)               ALLOW IN    Anywhere (v6)              # b6-1-https
+
+{
+  "service": "MiroFish Backend",
+  "status": "ok"
+}
+{"level":"info","ts":1790432700.2006376,"msg":"using config from file","file":"/etc/caddy/Caddyfile"}
+{"level":"info","ts":1790432700.2023876,"msg":"adapted config to JSON","adapter":"caddyfile"}
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100     2  100     2    0     0   3590      0 --:--:-- --:--:-- --:--:--  2000

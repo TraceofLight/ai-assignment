@@ -1,0 +1,37 @@
+2026-09-26T14:26:43+00:00
+{
+  "displayName": "ai-research",
+  "id": "ocid1.instance.oc1.ap-chuncheon-1.an4w4ljrjjfhilicwnam244wwqnf4gmwmhywtj2hp4kuq5tzw7qfrdx5tm6q",
+  "region": "ap-chuncheon-1",
+  "canonicalRegionName": "ap-chuncheon-1",
+  "shape": "VM.Standard.A1.Flex",
+  "shapeConfig": {
+    "maxVnicAttachments": 4,
+    "memoryInGBs": 24.0,
+    "networkingBandwidthInGbps": 4.0,
+    "ocpus": 4.0
+  }
+}
+[
+  {
+    "macAddr": "02:00:17:00:EE:F4",
+    "privateIp": "10.10.1.250",
+    "subnetCidrBlock": "10.10.1.0/24",
+    "virtualRouterIp": "10.10.1.1",
+    "vlanTag": 3351,
+    "vnicId": "ocid1.vnic.oc1.ap-chuncheon-1.ab4w4ljrj33ospqzqvl63buvqv3v4tjvlsyeydkucj76t5qoogahsrkczt7q"
+  }
+]ServiceError:
+{
+    "client_version": "Oracle-PythonSDK/2.168.0, Oracle-PythonCLI/3.75.0",
+    "code": "NotAuthorizedOrNotFound",
+    "logging_tips": "Please run the OCI CLI command using --debug flag to find more debug information.",
+    "message": "Authorization failed or requested resource not found.",
+    "opc-request-id": "764283EA84DC4294990A394E1D6C1201/14704E9A5BFC637924D6B76A594E5903/6702B2C4BDEAC19336A720706E9F3B58",
+    "operation_name": "get_vnic",
+    "request_endpoint": "GET https://iaas.ap-chuncheon-1.oraclecloud.com/20160918/vnics/ocid1.vnic.oc1.ap-chuncheon-1.ab4w4ljrj33ospqzqvl63buvqv3v4tjvlsyeydkucj76t5qoogahsrkczt7q",
+    "status": 404,
+    "target_service": "virtual_network",
+    "timestamp": "2026-09-26T14:26:45.000211+00:00",
+    "troubleshooting_tips": "See [https://docs.oracle.com/iaas/Content/API/References/apierrors.htm] for more information about resolving this error. If you are unable to resolve this issue, run this CLI command with --debug option and contact Oracle support and provide them the full error message."
+}

@@ -1,0 +1,4 @@
+PASS rollback safety: changed_rule (isolated mock, no live removal)
+PASS rollback safety: wrong_label (isolated mock, no live removal)
+PASS rollback safety: valid (isolated mock, no live removal)
+PASS rollback safety: absent (isolated mock, no live removal)
