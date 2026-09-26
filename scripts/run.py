@@ -19,6 +19,27 @@ class Links(HTMLParser):
                 self.links.append(value)
 
 
+def page_links(path):
+    content = path.read_text(encoding="utf-8")
+    if path.suffix != ".html":
+        return re.findall(r"\[[^\]]*\]\(([^\s)]+)\)", content)
+    parser = Links()
+    parser.feed(content)
+    return parser.links
+
+
+def broken_links(path):
+    errors = []
+    for link in page_links(path):
+        url = urlsplit(link)
+        if url.scheme or url.netloc or not url.path:
+            continue
+        target = path.parent / unquote(url.path)
+        if not target.is_file():
+            errors.append(f"깨진 링크: {path.relative_to(ROOT)} -> {link}")
+    return errors
+
+
 def main():
     required = [
         "README.md", "SUBMISSION.md", "src/index.html",
@@ -30,30 +51,14 @@ def main():
     pages = [ROOT / "README.md", ROOT / "SUBMISSION.md"]
     pages += sorted((ROOT / "team").glob("*.md"))
     pages += sorted((ROOT / "docs").glob("*.md"))
-    html_path = ROOT / "src/index.html"
-    if html_path.is_file():
-        pages.append(html_path)
+    pages.append(ROOT / "src/index.html")
     for path in pages:
-        if not path.is_file():
-            continue
-        content = path.read_text(encoding="utf-8")
-        if path.suffix == ".html":
-            parser = Links()
-            parser.feed(content)
-            links = parser.links
-        else:
-            links = re.findall(r"\[[^\]]*\]\(([^\s)]+)\)", content)
-        for link in links:
-            url = urlsplit(link)
-            if url.scheme or url.netloc or not url.path:
-                continue
-            target = path.parent / unquote(url.path)
-            if not target.is_file():
-                errors.append(f"깨진 링크: {path.relative_to(ROOT)} -> {link}")
+        if path.is_file():
+            errors.extend(broken_links(path))
     for error in errors:
         print(error)
     print(f"문서·HTML 점검: {len(pages)}개 파일, 오류 {len(errors)}개")
-    return 1 if errors else 0
+    return int(bool(errors))
 
 
 if __name__ == "__main__":
