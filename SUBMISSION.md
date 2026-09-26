@@ -15,6 +15,7 @@ TraceofLight, nansu(nansu0425), chanpago의 역할별 PR을 제목 접두어로 
 - [협업 규칙](docs/CONTRIBUTING.md)
 - [충돌 해결](docs/conflict-resolution.md)
 - [Git 트러블슈팅](docs/troubleshooting-log.md)
+- [Git 실습 메모](docs/git-practice.md)
 - [HTML](src/index.html)
 
 ## 과제 조건과 적용 범위
