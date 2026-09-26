@@ -5,7 +5,7 @@
 | 역할 이름 | GitHub | 소개 |
 | --- | --- | --- |
 | TraceofLight | [TraceofLight](https://github.com/TraceofLight) | [소개](team/traceoflight.md) |
-| nansu | [nansu0425](https://github.com/nansu0425) | 소개 문서 작업 예정 |
+| nansu | [nansu0425](https://github.com/nansu0425) | [소개](team/nansu0425.md) |
 | chanpago | [chanpago](https://github.com/chanpago) | 소개 문서 작업 예정 |
 
 ## 실행
