@@ -1,0 +1,63 @@
+[feature/traceoflight-git-practice b6822ea] docs(collaboration): add Git practice notes
+ 1 file changed, 2 insertions(+)
+ create mode 100644 docs/git-practice.md
+
+[feature/traceoflight-git-practice abf6201] docs(collaboration): describe the verified page baseline
+ Date: Sat Sep 26 12:00:00 2026 +0900
+ 1 file changed, 2 insertions(+)
+ create mode 100644 docs/git-practice.md
+
+[feature/traceoflight-git-practice fa68038] docs(collaboration): explain local commit cleanup
+ Author: nansu0425 <nansu0425@gmail.com>
+ 1 file changed, 1 insertion(+)
+
+M  docs/git-practice.md
+ docs/git-practice.md | 1 +
+ 1 file changed, 1 insertion(+)
+
+[feature/traceoflight-git-practice 5dbc08b] docs(collaboration): document soft reset without losing edits
+ Author: nansu0425 <nansu0425@gmail.com>
+ 1 file changed, 1 insertion(+)
+
+[feature/traceoflight-git-practice 30f3bf5] docs(collaboration): introduce a validation rollback exercise
+ Author: Chanpago <jch8659@gmail.com>
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+remote: 
+remote: Create a pull request for 'feature/traceoflight-git-practice' on GitHub by visiting:        
+remote:      https://github.com/TraceofLight/ai-assignment/pull/new/feature/traceoflight-git-practice        
+remote: 
+branch 'feature/traceoflight-git-practice' set up to track 'origin/feature/traceoflight-git-practice'.
+To https://github.com/TraceofLight/ai-assignment.git
+ * [new branch]      feature/traceoflight-git-practice -> feature/traceoflight-git-practice
+
+
+
+[feature/traceoflight-git-practice 89b5e79] docs(collaboration): restore the validation requirement
+ Author: Chanpago <jch8659@gmail.com>
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Saved working directory and index state On feature/traceoflight-git-practice: collaboration practice notes
+stash@{0}: On feature/traceoflight-git-practice: collaboration practice notes
+
+Your branch is up to date with 'origin/b2-2'.
+Switched to branch 'b2-2'
+Your branch is ahead of 'origin/feature/traceoflight-git-practice' by 1 commit.
+  (use "git push" to publish your local commits)
+Switched to branch 'feature/traceoflight-git-practice'
+On branch feature/traceoflight-git-practice
+Your branch is ahead of 'origin/feature/traceoflight-git-practice' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   docs/git-practice.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (fd699b9e686872bf7ee3fa20cefaec88d2b0bb9a)
+ docs/git-practice.md | 1 +
+ 1 file changed, 1 insertion(+)
+
+[feature/traceoflight-git-practice f6bac09] docs(collaboration): record restored in-progress notes
+ 1 file changed, 1 insertion(+)
