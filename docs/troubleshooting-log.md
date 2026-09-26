@@ -1,6 +1,7 @@
 # Git 트러블슈팅 기록
 실행일: 2026-10-09. 아래 SHA의 커밋 메타데이터 기준일은 2026-09-26이다.
 작업 브랜치: feature/traceoflight-git-practice. 공유 이력에 대한 강제 push는 수행하지 않았다.
+amend/reset 전 SHA는 로컬 실행 기록이며 일반 clone에서 접근이 보장되지 않는다. 재현할 때는 임시 브랜치에서 같은 파일 변경을 새로 커밋한 뒤 위 명령을 실행한다.
 [실행 출력](../evidence/git-practice.txt) · [실습 파일](git-practice.md)
 
 ## amend — TraceofLight
