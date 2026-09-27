@@ -1,0 +1,115 @@
+{
+  "url": "https://www.codyssey-domain-test.kro.kr/health",
+  "started_at_utc": "2026-09-27T12:06:54.853000+00:00",
+  "finished_at_utc": "2026-09-27T12:07:14.490247+00:00",
+  "method": "외부 단일 클라이언트의 순차 HTTPS 요청; 프록시 없음; 기본 TLS 검증",
+  "sample_count": 20,
+  "interval_seconds": 1,
+  "success_count": 20,
+  "p50_ms": 27.93,
+  "p95_ms": 46.79,
+  "percentile_method": "nearest-rank",
+  "limitations": "단기 가용성 표본이며 부하 테스트나 다중 네트워크 테스트가 아님. 호스트 CPU·메모리·네트워크 및 청구 비용은 측정하지 않음.",
+  "samples": [
+    {
+      "status": 200,
+      "body_ok": true,
+      "elapsed_ms": 35.42
+    },
+    {
+      "status": 200,
+      "body_ok": true,
+      "elapsed_ms": 28.53
+    },
+    {
+      "status": 200,
+      "body_ok": true,
+      "elapsed_ms": 35.91
+    },
+    {
+      "status": 200,
+      "body_ok": true,
+      "elapsed_ms": 37.42
+    },
+    {
+      "status": 200,
+      "body_ok": true,
+      "elapsed_ms": 34.86
+    },
+    {
+      "status": 200,
+      "body_ok": true,
+      "elapsed_ms": 24.45
+    },
+    {
+      "status": 200,
+      "body_ok": true,
+      "elapsed_ms": 23.51
+    },
+    {
+      "status": 200,
+      "body_ok": true,
+      "elapsed_ms": 24.91
+    },
+    {
+      "status": 200,
+      "body_ok": true,
+      "elapsed_ms": 22.71
+    },
+    {
+      "status": 200,
+      "body_ok": true,
+      "elapsed_ms": 24.68
+    },
+    {
+      "status": 200,
+      "body_ok": true,
+      "elapsed_ms": 23.66
+    },
+    {
+      "status": 200,
+      "body_ok": true,
+      "elapsed_ms": 36.48
+    },
+    {
+      "status": 200,
+      "body_ok": true,
+      "elapsed_ms": 27.93
+    },
+    {
+      "status": 200,
+      "body_ok": true,
+      "elapsed_ms": 48.52
+    },
+    {
+      "status": 200,
+      "body_ok": true,
+      "elapsed_ms": 24.3
+    },
+    {
+      "status": 200,
+      "body_ok": true,
+      "elapsed_ms": 40.15
+    },
+    {
+      "status": 200,
+      "body_ok": true,
+      "elapsed_ms": 46.79
+    },
+    {
+      "status": 200,
+      "body_ok": true,
+      "elapsed_ms": 26.25
+    },
+    {
+      "status": 200,
+      "body_ok": true,
+      "elapsed_ms": 41.62
+    },
+    {
+      "status": 200,
+      "body_ok": true,
+      "elapsed_ms": 23.76
+    }
+  ]
+}

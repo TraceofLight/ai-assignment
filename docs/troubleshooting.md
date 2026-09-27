@@ -44,3 +44,13 @@
 - **재발 방지:** 공유 무료 도메인도 상위 도메인 단위 제한 영향을 받을 수 있음을 기록. 공개 IP HTTP 검증과 HTTPS 보너스 결과를 분리.
 
 근거: [DNS](../evidence/dns-verified.txt), [발급 로그](../evidence/tls-issued.txt), [HTTPS 응답](../evidence/https-after.txt), [인증서](../evidence/tls-certificate.json). 참고: [Caddy reload](https://caddyserver.com/docs/command-line#caddy-reload), [Let’s Encrypt 재시도 정책](https://letsencrypt.org/docs/rate-limits/#retrying-after-hitting-rate-limits).
+
+## 배제한 가설과 확인 기준
+
+| 가설 | 배제 근거 | 교훈 |
+|---|---|---|
+| Caddy 설정 문법 때문에 프로세스가 실행되지 않음 | 설정을 읽지 않는 `caddy version`도 동일 권한 오류로 실패 | 실행 권한과 설정 해석을 분리해서 검사 |
+| 외부 HTTP 실패가 웹 서버 미기동 때문임 | localhost 200 및 리슨 상태 확인 | 서버 내부 성공 후 외부 네트워크 계층 점검 |
+| Docker 포트 게시 누락이 원인임 | host network로 동작하며 호스트 포트에 직접 리슨 | 실제 네트워크 모드 확인 후 포트 매핑 판단 |
+
+단계별 명령과 기대 결과는 [접속 검증 절차](validation.md)에 있다. 기존의 HTTP timeout 로그는 실제 실패 증빙이며, SSH를 일부러 차단해 만든 장애 기록은 없다.
