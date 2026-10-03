@@ -1,0 +1,21 @@
+SSH 접속 실행 증빙 — 실제 ssh -v 출력 발췌
+수집 시작(UTC): 2026-10-03T15:03:30.607554+00:00
+실행 위치: 외부 관리자 PC
+접속 경로: 기존 사설 관리망(VPN)을 통한 SSH TCP22
+호스트 검증: 기존 known_hosts에 저장된 동일 서버의 키를 HostKeyAlias로 검증
+비식별 처리: 주소, 계정, 개인키 경로, 공개키 지문만 치환; 출력 순서와 성공 상태 유지
+
+실행 명령(식별 값만 치환):
+ssh -v -T -o BatchMode=yes -o StrictHostKeyChecking=yes -o HostKeyAlias=<KNOWN_HOST_ALIAS> -o IdentitiesOnly=yes -o ConnectTimeout=15 -i <SSH_KEY_FILE> <SSH_USER>@<MANAGEMENT_IP> "printf 'SSH_EXECUTION_OK\n'; date -u '+%Y-%m-%dT%H:%M:%SZ'"
+
+stderr 로그 발췌 및 stdout:
+debug1: Connecting to <MANAGEMENT_IP> [<MANAGEMENT_IP>] port 22.
+debug1: Connection established.
+debug1: Host '<KNOWN_HOST_ALIAS>' is known and matches the ED25519 host key.
+Authenticated to <MANAGEMENT_IP> ([<MANAGEMENT_IP>]:22) using "publickey".
+debug1: Sending command: printf 'SSH_EXECUTION_OK\\n'; date -u '+%Y-%m-%dT%H:%M:%SZ'
+debug1: Exit status 0
+SSH_EXECUTION_OK
+2026-10-03T15:03:32Z
+
+로컬 SSH 프로세스 종료 코드: 0

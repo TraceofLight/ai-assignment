@@ -6,6 +6,7 @@ AWS의 VPC·EC2·Security Group을 OCI의 VCN·Compute·NSG에 대응한 실습�
 
 - 서비스 URL: **https://www.codyssey-domain-test.kro.kr/**
 - 선택한 외부 검증 방식: **A — 브라우저 접속**. 방식 B인 `/health`의 HTTP 200과 `OK`도 확인했다.
+- [관리자 SSH 접속 실행 로그](evidence/ssh-session.txt): 기존 사설 관리망에서 공개키 인증·원격 명령 실행·종료 코드 0 확인.
 - 공인 IP HTTP 검증: [결과](evidence/http-after.txt). 서버 주소는 `<PUBLIC_IP>`로 치환했다.
 - [아키텍처](docs/architecture.png), [IAM](docs/iam.md), [트러블슈팅](docs/troubleshooting.md), [정리 체크리스트](docs/cleanup-checklist.md).
 - [단계별 접속 검증](docs/validation.md), [모니터링·확장·비용 대응 계획](docs/operations.md).
