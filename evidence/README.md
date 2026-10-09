@@ -12,3 +12,4 @@
 - [평가 보완 API 스냅샷](evaluation-github.json)은 captured_at 시각의 실제 조회값이다. 권한 목록, main 보호, PR 7건의 병합·리뷰, 이슈 종료 및 댓글 예시를 포함한다.
 - [평가 보완 해설](../docs/evaluation-follow-up.md)은 API 확인 사실, 소유자 수행 확인, 운영 기록 양식을 구분한다.
 - [보완 검증 기록](evaluation-validation.txt)은 작업 트리의 링크·테스트·정적 HTML·충돌 재검증 결과다.
+- [PR 템플릿 적용 예시](evaluation-pr-template.json)는 PR #16 생성 직후 본문이다. 스냅샷의 head SHA 이후 문서 링크 보완은 현재 PR 이력에서 확인한다.

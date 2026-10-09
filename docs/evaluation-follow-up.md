@@ -2,6 +2,9 @@
 
 보완일: 2026-10-09. 후속 작업 작성자: TraceofLight.
 [Issue #15](https://github.com/TraceofLight/ai-assignment/issues/15)의 문서·증빙 보완 범위다.
+적용 PR: [#16](https://github.com/TraceofLight/ai-assignment/pull/16).
+[템플릿 사용 스냅샷](../evidence/evaluation-pr-template.json)은 생성 직후 본문의 What/Why/How/Closes와 체크리스트를 보존한다.
+GitHub 자동 삽입을 기다리지 않고 이번 브랜치의 템플릿 구조를 PR 작성 시 명시적으로 적용했다.
 기존 실습 커밋의 날짜·역할과 이번 보완 커밋의 실제 작성 일자를 구분한다.
 
 ## 권한·보호와 수행 이력

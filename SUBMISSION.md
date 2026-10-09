@@ -19,6 +19,8 @@
 
 후속 정리: [Issue #13](https://github.com/TraceofLight/ai-assignment/issues/13) · [PR #14](https://github.com/TraceofLight/ai-assignment/pull/14) — 실행 증빙의 줄 끝 공백 정규화.
 
+평가 보완: [Issue #15](https://github.com/TraceofLight/ai-assignment/issues/15) · [PR #16](https://github.com/TraceofLight/ai-assignment/pull/16) — 템플릿·운영 규칙·실제 API 증빙 보완. 승인·병합 상태는 PR에서 확인한다.
+
 ## 검토 항목과 반영
 아래는 댓글에 표시한 검토 역할별 인덱스다. 독립된 계정의 승인 횟수를 의미하지 않는다.
 | 역할 | 다른 역할의 PR 검토 항목 | 수정 후 답글 |
