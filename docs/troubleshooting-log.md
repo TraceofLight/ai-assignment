@@ -4,6 +4,25 @@
 amend/reset 전 SHA는 로컬 실행 기록이며 일반 clone에서 접근이 보장되지 않는다. 재현할 때는 임시 브랜치에서 같은 파일 변경을 새로 커밋한 뒤 위 명령을 실행한다.
 [실행 출력](../evidence/git-practice.txt) · [실습 파일](git-practice.md)
 
+## 증빙을 읽는 기준
+아래 각 항목의 SHA는 최초 실행 당시 값이다. 현재 이력은 [SHA 대응표](../evidence/commit-id-map.md)로 연결한다.
+amend/reset 전 커밋은 일반 clone에서 재현 대상으로 사용하지 않는다.
+원격 push 출력은 당시 신규 feature 브랜치 업로드를 증명하며, 이후 revert 커밋 생성 출력과 함께 읽는다.
+이 출력만으로 별도 시점의 원격 전체 상태를 증명하지는 않는다.
+평가 보완 과정에서는 과거 원격 스냅샷을 새로 만들어 과거 증빙으로 제시하지 않는다.
+
+현재 커밋에서 결과를 확인하는 명령:
+```powershell
+git show 531cfddee047915aad954cf19e0aaa6e72d1a774 -- docs/git-practice.md
+git show 4d5bdb81087906d811461ab828a2bff39da0d071 -- docs/git-practice.md
+git show 2bc54f8b3335823e74e9284bbb2df2bbce46dde3:docs/git-practice.md
+git show 4ddbc6a906ac6caf5253d00220675085bc950eaa:docs/git-practice.md
+git show 86024098ec20996a401826f0cdedd794992457ab -- docs/git-practice.md
+```
+위 순서는 amend 결과, soft reset 후 재커밋, 원격에 올렸던 잘못된 문구, revert 복원, stash 복원 후 커밋이다.
+재실습은 별도의 개인 임시 저장소에서 같은 메모 변경을 만든 뒤 아래 명령을 실행한다.
+공유 이력 변경 전 합의와 메시지 수정 기준은 [협업 규칙](CONTRIBUTING.md)을 따른다.
+
 ## amend — TraceofLight
 - 상황: push 전 실습 메모 커밋의 제목을 배포 기준이 드러나도록 구체화.
 - 명령: `git commit --amend -m "docs(collaboration): describe the verified page baseline"`

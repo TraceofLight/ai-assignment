@@ -34,6 +34,8 @@
 - [Git 그래프](evidence/git-log-graph.txt), [커밋 시간 흐름](evidence/commit-timeline.txt)
 - [검증 출력](evidence/validation.txt), [증빙 범위](evidence/README.md)
 - [작성자 계정 확인](evidence/author-mapping.md)
+- [평가 피드백 보완](docs/evaluation-follow-up.md): 권한·보호·병합·승인 증빙 범위와 항목별 대응
+- [PR 템플릿](.github/PULL_REQUEST_TEMPLATE.md) · [GitHub API 스냅샷](evidence/evaluation-github.json)
 
 ## 검증과 적용 범위
 | 항목 | 결과 |
@@ -45,8 +47,10 @@
 | Git 실습 | amend, reset --soft, 원격 push 후 revert, stash/pop |
 | 로컬 검증 | 링크 검사, 테스트 7건 |
 | 통합 대상 | 과제 브랜치 b2-2 사용 |
-| 독립 계정의 approve / main 보호 규칙 | 이 작업에서 충족한 것으로 표시하지 않음 |
+| main 보호 규칙 | 평가 보완 API 스냅샷에서 승인 1회·관리자 적용 확인, b2-2와 대상 구분 |
+| 독립 계정의 approve | 기존 PR 7건의 reviews 배열이 비어 있음, 별도 승인 증빙 미확보 |
 | 보너스 | 제외 |
 
-Git 커밋 메타데이터 기준일은 2026-09-26이며, GitHub 이슈·PR·댓글 및 검증 실행일은 2026-10-09다.
+기존 실습 커밋 메타데이터 기준일은 2026-09-26이며, GitHub 이슈·PR·댓글 및 검증 실행일은 2026-10-09다.
+평가 보완 커밋은 TraceofLight 명의와 실제 작업 일자로 기록한다.
 증빙 스냅샷은 해당 파일에 기재한 SHA까지의 상태다. 최종 병합 상태는 위 PR 링크와 b2-2에서 확인한다.
