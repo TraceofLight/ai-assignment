@@ -19,7 +19,7 @@ Python 3.10 이상에서 `python scripts/run.py`로 문서·HTML 링크를 점�
 - 통합 브랜치: `b2-2`. 과제별 브랜치 저장소이므로 이번 작업에서 main 역할을 맡는다.
 - 작업 브랜치: `feature/<계정>-<작업>`.
 - PR 제목: `(계정): 변경 내용`.
-- Git 커밋 메타데이터의 기준일은 2026-09-26이며, GitHub 활동 시각 및 검증 실행일과 별개다.
+- 기존 실습 커밋 메타데이터의 기준일은 2026-09-26이며, GitHub 활동 시각 및 검증 실행일과 별개다. 평가 보완은 실제 작업 일자로 기록한다.
 - [제출 인덱스](SUBMISSION.md) · [협업 규칙](docs/CONTRIBUTING.md)
 - [충돌 해결](docs/conflict-resolution.md) · [Git 실습](docs/troubleshooting-log.md)
 

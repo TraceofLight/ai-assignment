@@ -9,3 +9,7 @@
 - 커밋 메타데이터와 GitHub 이벤트 생성 시각을 구분한다.
 - Author/Committer 정합성 수정 이후의 SHA는 [커밋 대응표](commit-id-map.md)를 확인한다. 기존 실행 출력은 당시 SHA를 보존한다.
 - 텍스트 실행 출력의 줄 끝 공백은 diff 검사를 위해 정규화했다. 메시지와 SHA는 유지했다.
+- [평가 보완 API 스냅샷](evaluation-github.json)은 captured_at 시각의 실제 조회값이다. 권한 목록, main 보호, PR 7건의 병합·리뷰, 이슈 종료 및 댓글 예시를 포함한다.
+- [평가 보완 해설](../docs/evaluation-follow-up.md)은 API 확인 사실, 소유자 수행 확인, 운영 기록 양식을 구분한다.
+- [보완 검증 기록](evaluation-validation.txt)은 작업 트리의 링크·테스트·정적 HTML·충돌 재검증 결과다.
+- [PR 템플릿 적용 예시](evaluation-pr-template.json)는 PR #16 생성 직후 본문이다. 스냅샷의 head SHA 이후 문서 링크 보완은 현재 PR 이력에서 확인한다.

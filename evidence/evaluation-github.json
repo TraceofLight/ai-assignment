@@ -1,0 +1,275 @@
+{
+  "captured_at": "2026-10-09T12:47:44.2885883Z",
+  "repository": "TraceofLight/ai-assignment",
+  "default_branch": "b2-2",
+  "collaborators": [
+    {
+      "login": "TraceofLight",
+      "permissions": {
+        "admin": true,
+        "maintain": true,
+        "push": true,
+        "triage": true,
+        "pull": true
+      }
+    }
+  ],
+  "main_protection": {
+    "url": "https://api.github.com/repos/TraceofLight/ai-assignment/branches/main/protection",
+    "required_pull_request_reviews": {
+      "url": "https://api.github.com/repos/TraceofLight/ai-assignment/branches/main/protection/required_pull_request_reviews",
+      "dismiss_stale_reviews": false,
+      "require_code_owner_reviews": false,
+      "require_last_push_approval": false,
+      "required_approving_review_count": 1
+    },
+    "required_signatures": {
+      "url": "https://api.github.com/repos/TraceofLight/ai-assignment/branches/main/protection/required_signatures",
+      "enabled": false
+    },
+    "enforce_admins": {
+      "url": "https://api.github.com/repos/TraceofLight/ai-assignment/branches/main/protection/enforce_admins",
+      "enabled": true
+    },
+    "required_linear_history": {
+      "enabled": false
+    },
+    "allow_force_pushes": {
+      "enabled": false
+    },
+    "allow_deletions": {
+      "enabled": false
+    },
+    "block_creations": {
+      "enabled": false
+    },
+    "required_conversation_resolution": {
+      "enabled": true
+    },
+    "lock_branch": {
+      "enabled": false
+    },
+    "allow_fork_syncing": {
+      "enabled": false
+    }
+  },
+  "pull_requests": [
+    {
+      "number": 2,
+      "url": "https://github.com/TraceofLight/ai-assignment/pull/2",
+      "title": "(TraceofLight): 팀 소개 HTML과 제출 구조 구성",
+      "author": "TraceofLight",
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-10-09T12:08:28Z",
+      "merged_by": "TraceofLight",
+      "base": "b2-2",
+      "merge_commit_sha": "61a9d66b7ab4fb6685eea372e3e102c1227b002b",
+      "reviews": []
+    },
+    {
+      "number": 5,
+      "url": "https://github.com/TraceofLight/ai-assignment/pull/5",
+      "title": "(nansu0425): 팀 소개와 브랜치 협업 안내 추가",
+      "author": "TraceofLight",
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-10-09T12:10:11Z",
+      "merged_by": "TraceofLight",
+      "base": "b2-2",
+      "merge_commit_sha": "28b64a4e357c2ec0d41b5236616d9d18a0b7e6e3",
+      "reviews": []
+    },
+    {
+      "number": 6,
+      "url": "https://github.com/TraceofLight/ai-assignment/pull/6",
+      "title": "(chanpago): 팀 소개와 HTML 탐색 구조 보강",
+      "author": "TraceofLight",
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-10-09T12:11:02Z",
+      "merged_by": "TraceofLight",
+      "base": "b2-2",
+      "merge_commit_sha": "64b541e787ecff891e2c7010df27d85a394a132e",
+      "reviews": []
+    },
+    {
+      "number": 8,
+      "url": "https://github.com/TraceofLight/ai-assignment/pull/8",
+      "title": "(TraceofLight): Git 트러블슈팅 네 가지 실습과 기록",
+      "author": "TraceofLight",
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-10-09T12:13:35Z",
+      "merged_by": "TraceofLight",
+      "base": "b2-2",
+      "merge_commit_sha": "376988b66c851c0dab6ee01147f09556145d9cf4",
+      "reviews": []
+    },
+    {
+      "number": 11,
+      "url": "https://github.com/TraceofLight/ai-assignment/pull/11",
+      "title": "(nansu0425): 페이지 제목과 학습 안내 정리",
+      "author": "TraceofLight",
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-10-09T12:14:17Z",
+      "merged_by": "TraceofLight",
+      "base": "b2-2",
+      "merge_commit_sha": "48dcae849d4efe0b2317fe886de7e668100a0803",
+      "reviews": []
+    },
+    {
+      "number": 12,
+      "url": "https://github.com/TraceofLight/ai-assignment/pull/12",
+      "title": "(chanpago): 충돌 재검증과 제출 인덱스 완성",
+      "author": "TraceofLight",
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-10-09T12:17:52Z",
+      "merged_by": "TraceofLight",
+      "base": "b2-2",
+      "merge_commit_sha": "fc0cd31eb7500f15ea4779b0a1973630a347ae62",
+      "reviews": []
+    },
+    {
+      "number": 14,
+      "url": "https://github.com/TraceofLight/ai-assignment/pull/14",
+      "title": "(TraceofLight): 실행 증빙의 줄 끝 공백 정리",
+      "author": "TraceofLight",
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-10-09T12:19:13Z",
+      "merged_by": "TraceofLight",
+      "base": "b2-2",
+      "merge_commit_sha": "f7d579b56b65bf9f203536e812730e8526481f2c",
+      "reviews": []
+    }
+  ],
+  "issues": [
+    {
+      "number": 1,
+      "url": "https://github.com/TraceofLight/ai-assignment/issues/1",
+      "state": "closed",
+      "closed_at": "2026-10-09T12:09:05Z",
+      "closed_by": "TraceofLight",
+      "closed_events": [
+        {
+          "actor": "TraceofLight",
+          "created_at": "2026-10-09T12:09:05Z",
+          "commit_id": null
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "url": "https://github.com/TraceofLight/ai-assignment/issues/3",
+      "state": "closed",
+      "closed_at": "2026-10-09T12:10:17Z",
+      "closed_by": "TraceofLight",
+      "closed_events": [
+        {
+          "actor": "TraceofLight",
+          "created_at": "2026-10-09T12:10:17Z",
+          "commit_id": null
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "url": "https://github.com/TraceofLight/ai-assignment/issues/4",
+      "state": "closed",
+      "closed_at": "2026-10-09T12:11:08Z",
+      "closed_by": "TraceofLight",
+      "closed_events": [
+        {
+          "actor": "TraceofLight",
+          "created_at": "2026-10-09T12:11:08Z",
+          "commit_id": null
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "url": "https://github.com/TraceofLight/ai-assignment/issues/7",
+      "state": "closed",
+      "closed_at": "2026-10-09T12:13:41Z",
+      "closed_by": "TraceofLight",
+      "closed_events": [
+        {
+          "actor": "TraceofLight",
+          "created_at": "2026-10-09T12:13:41Z",
+          "commit_id": null
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "url": "https://github.com/TraceofLight/ai-assignment/issues/9",
+      "state": "closed",
+      "closed_at": "2026-10-09T12:14:23Z",
+      "closed_by": "TraceofLight",
+      "closed_events": [
+        {
+          "actor": "TraceofLight",
+          "created_at": "2026-10-09T12:14:23Z",
+          "commit_id": null
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "url": "https://github.com/TraceofLight/ai-assignment/issues/10",
+      "state": "closed",
+      "closed_at": "2026-10-09T12:17:58Z",
+      "closed_by": "TraceofLight",
+      "closed_events": [
+        {
+          "actor": "TraceofLight",
+          "created_at": "2026-10-09T12:17:58Z",
+          "commit_id": null
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "url": "https://github.com/TraceofLight/ai-assignment/issues/13",
+      "state": "closed",
+      "closed_at": "2026-10-09T12:19:19Z",
+      "closed_by": "TraceofLight",
+      "closed_events": [
+        {
+          "actor": "TraceofLight",
+          "created_at": "2026-10-09T12:19:19Z",
+          "commit_id": null
+        }
+      ]
+    }
+  ],
+  "comment_examples": [
+    {
+      "url": "https://github.com/TraceofLight/ai-assignment/pull/2#issuecomment-6080564200",
+      "author": "TraceofLight",
+      "created_at": "2026-10-09T12:07:59Z",
+      "body": "검토 항목 (nansu0425): src/index.html에서 협업 규칙으로 바로 이동할 수 없습니다. 페이지 하단에 docs/CONTRIBUTING.md 링크를 추가하면 처음 참여하는 사람이 브랜치와 커밋 규칙을 찾기 쉽겠습니다."
+    },
+    {
+      "url": "https://github.com/TraceofLight/ai-assignment/pull/5#issuecomment-6080584031",
+      "author": "TraceofLight",
+      "created_at": "2026-10-09T12:09:19Z",
+      "body": "검토 항목 (TraceofLight): team/nansu0425.md의 작업 순서에서 검토 반영 후 재검증 단계가 빠져 있습니다. 수정 후 링크 검사와 테스트를 다시 실행하는 단계가 필요합니다."
+    },
+    {
+      "url": "https://github.com/TraceofLight/ai-assignment/pull/6#issuecomment-6080594672",
+      "author": "TraceofLight",
+      "created_at": "2026-10-09T12:10:03Z",
+      "body": "검토 항목 (TraceofLight): nansu0425 브랜치와 src/index.html의 summary 및 팀원 목록이 겹칩니다. 병합 시 한쪽 소개를 버리지 말고 두 링크와 두 문장의 목적을 모두 보존해주세요."
+    },
+    {
+      "url": "https://github.com/TraceofLight/ai-assignment/pull/2#issuecomment-6080570142",
+      "author": "TraceofLight",
+      "created_at": "2026-10-09T12:08:22Z",
+      "body": "반영 결과 (TraceofLight): HTML 하단에 협업 규칙 링크를 추가했고 README에 링크 검사 실패 시 출력과 종료 코드를 기록했습니다. 링크 검사와 기존 테스트 4건을 다시 통과했습니다."
+    }
+  ]
+}
